@@ -1,9 +1,9 @@
-Hydra
+Login Attacks
 ======
 
-
- "apt install hydra -y" or download it and use it from its Github Repository but its pre-installed on Pwnbox.
-https://github.com/vanhauser-thc/thc-hydra
+Hydra
+------
+To install Hydra use command 'apt install hydra -y' or download from its Github Repository 'git clone https://github.com/vanhauser-thc/thc-hydra'
 
 password wordlists /opt/useful/SecLists/Passwords/
 username wordlists /opt/useful/SecLists/Usernames/
