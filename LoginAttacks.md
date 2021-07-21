@@ -4,8 +4,11 @@ Login Attacks
 Hydra
 ------
 To install Hydra use command `apt install hydra -y` or download from its Github Repository `git clone https://github.com/vanhauser-thc/thc-hydra`
+
 *password wordlists /opt/useful/SecLists/Passwords/
+
 *username wordlists /opt/useful/SecLists/Usernames/
+
 *https://github.com/danielmiessler/SecLists
 The most commonly used password wordlists is rockyou.txt, which has over 14 million unique passwords, sorted by how common they are. https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 /opt/useful/SecLists/Passwords/Default-Credentials
