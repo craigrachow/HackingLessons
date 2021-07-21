@@ -1,6 +1,6 @@
-Alt-H1
-======
 Hydra
+======
+
 
  "apt install hydra -y" or download it and use it from its Github Repository but its pre-installed on Pwnbox.
 https://github.com/vanhauser-thc/thc-hydra
