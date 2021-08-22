@@ -2,17 +2,28 @@
 https://overthewire.org/
 
 ## Bandit
-Level 0 → Level 1 
-Level 1 → Level 2
-Level 2 → Level 3
-Level 3 → Level 4
-Level 4 → Level 5
-Level 5 → Level 6
-Level 6 → Level 7
-Level 7 → Level 8
-Level 8 → Level 9
-Level 9 → Level 10
-Level 10 → Level 11
+Level 0 → Level 1 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+Level 1 → Level 2 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Level 2 → Level 3 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Level 3 → Level 4 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level 4 → Level 5 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Level 5 → Level 6 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level 6 → Level 7 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level 7 → Level 8 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+Level 8 → Level 9 cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+Level 9 → Level 10 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+Level 10 → Level 11 
+
 Level 11 → Level 12
 Level 12 → Level 13
 Level 13 → Level 14
