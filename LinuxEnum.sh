@@ -11,6 +11,8 @@ ifconfig | grep ip
 ip
 netstat
 
+# Services Listings
+systemctl list-units --type=service
 
 # Bash History
 history
@@ -18,7 +20,7 @@ history
 # Cronjobs
 crontab -l
 
-#file Listing
+#file Listing (maybe tree instead)
 pwd
 ls -l ~/
 ls -l /tmp
