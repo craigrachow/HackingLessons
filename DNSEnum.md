@@ -29,3 +29,4 @@ https://github.com/theMiddleBlue/DNSenum/blob/master/dnsenum.sh
 
 read more
 https://securitytrails.com/blog/google-hacking-techniques
+https://securitytrails.com/blog/dns-enumeration
