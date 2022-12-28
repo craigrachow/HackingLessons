@@ -1,0 +1,6 @@
+Recon
+
+#going to show all ports open/running and 5threads.
+nmap -p- -T5 <ip> -v
+#get info for the open ports
+nmap -p 22,25,80 -A <ip> -v
