@@ -1,7 +1,12 @@
 # HackingLessons
 Lessons and Tutorials Covered
 
+##### Complete (Inc formatted documenation)
+* Learning Process (HTB Academy)*
+* Introduction to Academy (HTB Academy)
+No documetation *
 
+##### In Progress
 * File Inclusion / Directory Traversal (HTB Academy)
 * Linux Fundermentals (HTB Academy)
 * Login Attacks (HTB Academy)
@@ -9,6 +14,8 @@ Lessons and Tutorials Covered
 * Nmap (HTB Academy)
 * Web Enumeration
 * Windows Fundermentals (HTB Academy)
+
+
 
 ##### Connect to VPN
 > sudo openvpn user.ovpn
