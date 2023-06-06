@@ -5,6 +5,7 @@ Lessons and Tutorials Covered
 * Learning Process (HTB Academy)*
 * Introduction to Academy (HTB Academy)
 * Linux Fundermentals (HTB Academy)
+* SQLAttacking - SQLmap Essentials - SQL Injection Fundermentals (HTB Academy)
 * Windows Fundermentals (HTB Academy)
 No documetation *
 
