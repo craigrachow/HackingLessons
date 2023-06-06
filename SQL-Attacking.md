@@ -12,8 +12,8 @@ or refer to cheatsheet/answers
 The cheat sheet is as a useful command reference for this module.
 
 Command	Description
-> - **sqlmap -h	View the basic help menu
-> - **sqlmap -hh	View the advanced help menu
+> - sqlmap -h	View the basic help menu
+> - sqlmap -hh	View the advanced help menu
 > - **sqlmap -u "http://www.example.com/vuln.php?id=1" --batch	Run SQLMap without asking for user input
 > - **sqlmap 'http://www.example.com/' --data 'uid=1&name=test'	SQLMap with POST request
 > - **sqlmap 'http://www.example.com/' --data 'uid=1*&name=test'	POST request specifying an injection point with an asterisk
