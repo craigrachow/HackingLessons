@@ -4,16 +4,9 @@
 sudo apt install sqlmap  
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 
-* to run SQLMap
-sqlmap -u "http://www.example.com/vuln.php?id=1" --batch
-
-sqlmap 'http://www.example.com/?id=1' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' -H 'Accept: image/webp,*/*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Connection: keep-alive' -H 'DNT: 1'
-sqlmap 'http://www.example.com/' --data 'uid=1*&name=test'
-sqlmap -r req.txt
-
-
-sqlmap -u "http://46.101.23.188:30063/case2.php" --batch
-sqlmap 'http://46.101.23.188:30063/case2.php' --data 'uid=1'
+* to run SQLMap  
+sqlmap -u "http://www.example.com/vuln.php?id=1" --batch  
+or refer to cheatsheet/answers
 
 # Cheat Sheet
 The cheat sheet is as a useful command reference for this module.
