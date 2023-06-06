@@ -1,6 +1,6 @@
 # SQL Attacking 
-*SQLmap Essentials*
-*SQL Injection Fundermentals*
+**SQLmap Essentials**  
+**SQL Injection Fundermentals**  
 
 
 ## SQLMAP Intallation  
