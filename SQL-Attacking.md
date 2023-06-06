@@ -1,7 +1,7 @@
 # SQL Attacking 
 
-* SQLMAp intallation
-sudo apt install sqlmap
+* SQLMAP Intallation  
+sudo apt install sqlmap  
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 
 * to run SQLMap
