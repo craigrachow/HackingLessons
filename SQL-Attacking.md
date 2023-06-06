@@ -47,12 +47,10 @@ https://guides.github.com/features/mastering-markdown/
 
 
 ### MySQL Cheatsheet
-> - **MySQL
-> - **Command	Description
-> - **General	
+**General**
 > - **mysql -u root -h docker.hackthebox.eu -P 3306 -p	login to mysql database
-SHOW DATABASES	List available databases
-USE users	Switch to database
+> - **SHOW DATABASES	List available databases
+> - **USE users	Switch to database
 Tables	
 CREATE TABLE logins (id INT, ...)	Add a new table
 SHOW TABLES	List available tables in current database
