@@ -1,4 +1,7 @@
 # SQL Attacking 
+*SQLmap Essentials
+*SQL Injection Fundermentals
+
 
 ## SQLMAP Intallation  
 sudo apt install sqlmap  
@@ -8,7 +11,7 @@ git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 sqlmap -u "http://www.example.com/vuln.php?id=1" --batch  
 or refer to cheatsheet/answers
 
-### Cheat Sheet
+### SQLmapCheat Sheet
 The cheat sheet is as a useful command reference for this module.
 
 Command	Description
@@ -43,11 +46,11 @@ Command	Description
 https://guides.github.com/features/mastering-markdown/
 
 
-# SQL
-MySQL
-Command	Description
-General	
-mysql -u root -h docker.hackthebox.eu -P 3306 -p	login to mysql database
+### MySQL Cheatsheet
+> - **MySQL
+> - **Command	Description
+> - **General	
+> - **mysql -u root -h docker.hackthebox.eu -P 3306 -p	login to mysql database
 SHOW DATABASES	List available databases
 USE users	Switch to database
 Tables	
