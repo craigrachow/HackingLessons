@@ -1,22 +1,23 @@
-Recon
+# Network Enumeration (Complete)
+**Network Enumeration with nmap**  
 
-#going to show all ports open/running and 5threads.
-nmap -p- -T5 <ip> -v
 
-#get info for the open ports
-nmap -p 22,25,80 -A <ip> -v
 
-#scanning all ports on IP
-nmap -sS <ip>
+### nmap Cheat Sheet
+The cheat sheet is as a useful command reference for this module.
 
-#scanning verion of service on each port
-nmap  -sV <ip>
+Command	Description
+> - **nmap -p- -T5 <ip> -v** -	Going to show all ports open/running and 5threads.
+> - **nmap -p 22,25,80 -A <ip> -v**	- get info for the open ports
+> - **nmap -sS <ip>** -	scanning all ports on IP  
+> - **nmap  -sV <ip>** - scanning verion of service on each port  
+> - **nmap -O <ip>** - scanning for OS
+> - **nmap -F 192.168.1.1/24** - scan only common ports on a subnet
+#
 
-#scanning for OS
-nmap -O <ip>
 
-#scan only common ports on a subnet
-nmap -F 192.168.1.1/24
+#
+
 
 
 
