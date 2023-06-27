@@ -4,6 +4,7 @@ Lessons and Tutorials Covered
 ### Complete (Inc formatted documenation)  
 * Learning Process (HTB Academy)*
 * Introduction to Academy (HTB Academy)
+* Getting Started (HTB Academy)
 * Linux Fundermentals (HTB Academy)
 * Network Enumeration - Nmap (HTB Academy)
 * SQLAttacking - SQLmap Essentials - SQL Injection Fundermentals (HTB Academy)
