@@ -13,8 +13,20 @@ Establishment of **incident handling capability** within the organization. And t
 
 
 **Clear Policies & Documentation**
-> Contact information and roles of relevant teams and external assistance. eg. incident handling team members, legal and compliance, managment, support, communications, law enforcment, facilities, service providers.
-> 
+> Contact information and roles of relevant teams and external assistance -- eg. incident handling team members, legal and compliance, managment, support, communications, law enforcment, facilities, service providers.
+>
+> Policies, Plans and Procedures -- Incident Response, Information, Cheat Sheets, etc.
+>
+> Baselines -- golden image and/or clean state of environment.
+>
+> Technology Diagrams & Designs -- Network, Artechiet, etc
+>
+> Asset Managment -- Databses,
+>
+> User and Privledge Account processes -- on-demand when necessary for highest privledges.
+>
+>   ..
+
 
 **Clear Policies & Documentation**
 > Contact information and roles of relevant teams and external assistance. eg. incident handling team members, legal and compliance, managment, support, communications, law enforcment, facilities, service providers.
