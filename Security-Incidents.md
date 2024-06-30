@@ -28,8 +28,14 @@ Establishment of **incident handling capability** within the organization. And t
 >   ..
 
 
-**Clear Policies & Documentation**
-> Contact information and roles of relevant teams and external assistance. eg. incident handling team members, legal and compliance, managment, support, communications, law enforcment, facilities, service providers.
+**Tools (Software & Hardware)**
+> Forensic laptops -- preserve disk images and log files, perform data analysis, and investigate without any restrictions.
+>
+> Security tools -- Log analysis and capture for toos items like Network, Workstations, Access, Files, Databases.
+>
+> Jump Bag -- Off network bag or box containing tools, pre printed forms and documents needed for investigating, evidence holding, contats, tools, hardware, etc etc.
+>
+> 
 
 > ### Cheat Sheet
 > - **command** - What it does
