@@ -123,20 +123,23 @@ When the investigation is complete it is time to enter the containment stage to 
 >
 > Increase monitoring for suspecious events - unusual logins, behaviours, logs
 > ..
+
+## Post-Incident Activity Stage ##
+Document the incident and improve future capabilities.
+
+**Reporting**
+> 
+    What happened and when?
+    Performance of the team dealing with the incident in regard to plans, playbooks, policies, and procedures
+    Did the business provide the necessary information and respond promptly to aid in handling the incident in an efficient manner? What can be improved?
+    What actions have been implemented to contain and eradicate the incident?
+    What preventive measures should be put in place to prevent similar incidents in the future?
+    What tools and resources are needed to detect and analyze similar incidents in the future?
 >
-> 
 
 
-> ### Cheat Sheet
-> - **command** - What it does
-> 
-...
-...
 
 ## Useful Links ##  
 NIST Computer Security
 Incident Handling Guide - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf  
 
-
-
-https://www.markdownguide.org/basic-syntax/
