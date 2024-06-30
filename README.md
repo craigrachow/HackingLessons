@@ -13,7 +13,7 @@ Lessons and Tutorials Covered
 
 ### In Progress
 * File Inclusion / Directory Traversal (HTB Academy)
-* 
+* Security Incidents (Half Complete)
 * Login Attacks (HTB Academy)
 * Metasploit (HTB Academy)
 
