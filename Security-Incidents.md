@@ -47,6 +47,8 @@ Establishment of **incident handling capability** within the organization. And t
 >
 > Training and Awareness --  Purple Teaming Excercises -- PenTesting
 
+
+
 ### Detection & Analysis Stage###
 The detection & analysis phase involves all aspects of detecting an incident.  
 
@@ -55,8 +57,6 @@ Threats are introduced to the organization via an infinite amount of attack vect
 - An alert from one of our tools (EDR, IDS, Firewall, SIEM, etc.)
 - Threat hunting activities
 - A third-party notification informing us that they discovered signs of our organization being compromised
-
-
 
 
 **Initial Investigation**
@@ -91,9 +91,40 @@ Threats are introduced to the organization via an infinite amount of attack vect
     Does the exploit have any worm-like capabilities?  
 
 
+**Incident Confidentiality & Communication** - Information gathered should be kept on a need-to-know basis, unless applicable laws or a management decision instruct us otherwise.  
+
+**Investigation Cycle** - Indicator of Compromise -- Identification Of New Leads & Impacted Systems -- Data Collection & Analysis From The New Leads & Impacted Systems
 
 
+## Containment, Eradication, & Recovery Stage ##
+When the investigation is complete it is time to enter the containment stage to prevent the incident from causing more damage.
 
+
+**Containment**
+> To stop the attack or breach
+>
+> short-term containment - network isolation or removal. Stopping the attack but not removing evidence as we may do when shutting down.
+>  
+> long-term containment - firewalling, patching, changing passwords, shutting down.
+>
+> ..
+
+**Eradication**
+> To remove/fix the attack or breach
+>
+> Some of the activities in this stage include removing the detected malware from systems, rebuilding some systems, and restoring others from backup.
+>
+> ..
+
+**Recovery**
+> Bring systems back online to normal
+>
+> Verify that a system is in fact working as expected.
+>
+> Increase monitoring for suspecious events - unusual logins, behaviours, logs
+> ..
+>
+> 
 
 
 > ### Cheat Sheet
