@@ -5,7 +5,9 @@ Windows Fundermentals (Complete)
 ## Useful Commands 
 **doskey /history** - lists command history
 **tree /f** - lists directory structure with files. omit /f for just folders.
-
+**rd /s** - deletes directory /s is for sub directorys
+**more /s** - reads a file and scrunches the line spacing
+**fine /i** - use this in commands to find text. ie find /i "string" < password.txt
 
 ## Good Resources 
 - https://ss64.com/nt/ -
