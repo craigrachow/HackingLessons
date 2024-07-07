@@ -2,11 +2,16 @@
 Introduction to Windows Command Line (Complete)
 Windows Fundermentals (Complete)
 
-
+## Useful Commands 
+**doskey /history** - lists command history
+**tree /f** - lists directory structure with files. omit /f for just folders.
 
 
 ## Good Resources 
-- https://ss64.com/nt/ - 
+- https://ss64.com/nt/ -
+
+
+
 
 ### Definitions
 **Incident** is an event with a negative consequence. 
