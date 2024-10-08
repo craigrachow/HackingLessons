@@ -10,6 +10,7 @@ ZAP better then burp
 
 nmap -sn 192.168.0.1/24 - scans network for all hosts  
 nmap -sV <ip> - does a service scan on a target ip  
+nmap -sC <ip> - does a scripts scan on a target ip (this and the above can be combined with -sVC)   
 nmap --script vuln <ip> - does a quick vulnerability scan on a host  
 namp -A <ip> - does a deep scan for everything above.  
 other options -f (fragment, make it harder for detection), --source 53 (make it appear as if coming from dns port),  
