@@ -26,10 +26,9 @@ Further Useful nmap Commands
 > - **nmap -p 8080 --script="http-enum" <ip>** - does a scripts scan on a target ip and port.
 > - **nmap -iL list.txt** -	Scans ip/hosts in the textfile    
 > - other options -f (fragment, make it harder for detection), --source 53 (make it appear as if coming from dns port)    
-
-
 #
 
-
+Other programs
+> - **masscan 192.168.0.1/24 -p0-65535 --rate=10000** - scans network for all hosts, but fast
 
 
