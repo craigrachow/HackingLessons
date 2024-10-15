@@ -30,5 +30,6 @@ Further Useful nmap Commands
 
 Other programs
 > - **masscan 192.168.0.1/24 -p0-65535 --rate=10000** - scans network for all hosts, but fast
-
+> - **masscan 192.168.0.1/24 -p23 --rate=1000** - does a quick scan for all telnet open
+> - other options --randomize-hosts (dont scan in order)
 
