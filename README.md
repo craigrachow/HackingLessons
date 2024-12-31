@@ -15,6 +15,7 @@ Lessons and Tutorials Covered
 * File Inclusion / Directory Traversal (HTB Academy)
 * Security Incidents (Half Complete)
 * Login Attacks (HTB Academy)
+* OSINT
 * Metasploit (HTB Academy)
 
 * Web Enumeration
