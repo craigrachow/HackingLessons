@@ -21,6 +21,9 @@ wpscan --url http://website --enumerate  vp,vt --plugins-detection aggressive (n
 
 amass enum -d domain --passive - gives XXXX  
 
+python3 -m http.server 80 -- Start at adhoc webserver, good for quickly sharing files.    
+  
+
 ## Online Tools ##
 https://gchq.github.io/CyberChef/  -  
 
