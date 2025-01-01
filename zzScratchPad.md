@@ -9,11 +9,13 @@ Repeat
 ZAP better then burp  
 
 ## Web Enumeration ##
-wappalyzer - good plugin for looking at website platforms or software. add this to my hacking soe
+wappalyzer - good plugin for looking at website platforms or software. add this to my hacking soe  
 
 crt.sh - website to search for subdomains.  
 
 curl -u http://website - display website header and info  
+
+whatweb www.site.com - good for looking at website platforms or software.
 
 dirsearch -u http://website - enumerates subdirectories  
 gobuster dir -u http://website -w /usr/share/seclist - enumerates subdirectories  
