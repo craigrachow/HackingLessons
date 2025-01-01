@@ -8,6 +8,8 @@ Evlate
 Repeat  
 ZAP better then burp  
 
+crt.sh - website to search for subdomains.  
+
 curl -u http://website - display website header and info  
 
 dirsearch -u http://website - enumerates subdirectories  
