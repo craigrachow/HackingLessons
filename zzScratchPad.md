@@ -8,6 +8,9 @@ Evlate
 Repeat  
 ZAP better then burp  
 
+## Web Enumeration ##
+wappalyzer - good plugin for looking at website platforms or software. add this to my hacking soe
+
 crt.sh - website to search for subdomains.  
 
 curl -u http://website - display website header and info  
