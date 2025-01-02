@@ -23,6 +23,8 @@ gobuster dns -d http://website -w dns Jhaddix.txt - enumerates subdirectories
 
 sublist3r -d http://website - enumerates subdirectories  (add -t 10 for multithread or faster search)
 
+nikto -h www.site.com  - scans website for platforms or software versions. also mentions where attacks could be possible. 
+
 wpscan --url http://website --enumerate  u for user, p for plugins, t for themes  
 wpscan --url http://website --enumerate  vp,vt --plugins-detection aggressive (need api token)  
 
