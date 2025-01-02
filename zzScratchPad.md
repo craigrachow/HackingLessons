@@ -20,6 +20,7 @@ whatweb www.site.com - good for looking at website platforms or software.
 dirsearch -u http://website - enumerates subdirectories  
 gobuster dir -u http://website -w /usr/share/seclist - enumerates subdirectories  
 gobuster dns -d http://website -w dns Jhaddix.txt - enumerates subdirectories  
+dirbuster is a gui version of the above tools 
 
 sublist3r -d http://website - enumerates subdirectories  (add -t 10 for multithread or faster search)
 
