@@ -1,12 +1,14 @@
 All commands and links i need to sort.  
 
-
+Good high level guide on how to pentest. https://thehackernews.com/2024/10/guide-ultimate-pentest-checklist-for.html?m=1  
 Recon  
 Find Vuln  
 Exploit  
 Evlate   
 Repeat  
 ZAP better then burp  
+
+
 
 ## Web Enumeration ##
 wappalyzer - good plugin for looking at website platforms or software. add this to my hacking soe  
