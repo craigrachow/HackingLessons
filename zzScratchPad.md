@@ -20,6 +20,8 @@ curl -u http://website - display website header and info
 whatweb www.site.com - good for looking at website platforms or software.
 
 dirsearch -u http://website - enumerates subdirectories  
+dirb http://website - enumerates subdirectories  
+ffuf -w /usr/share/wordlists/dirbuster/:FUZZ -u http://website/FUZZ - enumerates subdirectories  
 gobuster dir -u http://website -w /usr/share/seclist - enumerates subdirectories  
 gobuster dns -d http://website -w dns Jhaddix.txt - enumerates subdirectories  
 dirbuster is a gui version of the above tools 
