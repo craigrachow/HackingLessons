@@ -7,6 +7,11 @@ Clearbit Connect -  Very good email address and contact finder. Chrome browser p
 **Email Addresses Verification Tools**  
 tools.emailhippo.com && email-checker.net
 
+**Check if a email address was in a data breach**
+https://haveibeenpwned.com/
+
+**search engine for Internet-connected devices**
+shodan.io  
 
 ***Tools***    
 
