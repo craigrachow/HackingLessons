@@ -10,6 +10,12 @@ tools.emailhippo.com && email-checker.net
 **Check if a email address was in a data breach**
 https://haveibeenpwned.com/
 
+**Explore more than 916 billion web pages saved over time**
+https://web.archive.org/
+
+**Check username availability across multiple platforms as you type**
+https://instantusername.com/  
+
 **search engine for Internet-connected devices**
 shodan.io  
 
