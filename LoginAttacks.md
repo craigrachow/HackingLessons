@@ -291,4 +291,4 @@ cewl -d <depth to spider> -m <minimum word length> -w <output wordlist> <url of 
 hashcat -a 0 -m 100 hash rockyou.txt -r rule.txt	Sample Hashcat rule syntax
 ./cap2hccapx.bin input.cap output.hccapx	cap2hccapx syntax
 hcxpcaptool -z pmkidhash_corp cracking_pmkid.cap	hcxpcaptoolsyntax
-
+https://medium.com/@WriteupsTHM_HTB_CTF/cracking-passwords-with-hashcat-hackthebox-1e50d859097b  
