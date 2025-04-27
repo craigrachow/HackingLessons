@@ -9,6 +9,8 @@ Windows Fundermentals (Complete)
 **more /s** - reads a file and scrunches the line spacing  
 **fine /i** - use this in commands to find text. ie find /i "string" < password.txt  
 
+**set DCIP=172.16.5.2** - sets a environmental variable, in this case DCIP Address  
+
 
 ## Good Resources 
 - https://ss64.com/nt/ -
