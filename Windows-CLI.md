@@ -13,6 +13,13 @@ Windows Fundermentals (Complete)
 **setx DCIP=172.16.5.2** - sets a environmental variable (permanently), in this case DCIP Address
 **echo %DCIP%** - displays enviromental variable 
 
+tasklist /svc - List of processes running
+wmic service list brief - List of processes running
+sc start wuauserv - Starting / Stopping a service
+sc config wuauserv start= disabled - Disabling a service
+net start wuauserv - Simllar usage as sc command. 
+
+
 
 
 ## Good Resources 
