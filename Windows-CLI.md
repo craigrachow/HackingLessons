@@ -9,7 +9,10 @@ Windows Fundermentals (Complete)
 **more /s** - reads a file and scrunches the line spacing  
 **fine /i** - use this in commands to find text. ie find /i "string" < password.txt  
 
-**set DCIP=172.16.5.2** - sets a environmental variable, in this case DCIP Address  
+**set DCIP=172.16.5.2** - sets a environmental variable (temporaly), in this case DCIP Address  
+**setx DCIP=172.16.5.2** - sets a environmental variable (permanently), in this case DCIP Address
+**echo %DCIP%** - displays enviromental variable 
+
 
 
 ## Good Resources 
