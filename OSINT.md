@@ -17,10 +17,26 @@ https://haveibeenpwned.com/
 https://web.archive.org/
 
 **Check username availability across multiple platforms as you type**
-https://instantusername.com/  
+https://instantusername.com/ 
+
+**Reverse Image Search**
+https://tineye.com/  
+
+**EXIF data can contain sensitive information like the exact location where a photo was taken, the device used, and timestamps**
+https://www.exifdata.com/  
 
 **search engine for Internet-connected devices**
-shodan.io  
+https://shodan.io  
+
+**Google Dorks - Google Dorking describes the process of using advanced search filters that allow to retrieve more efficient results** 
+https://www.exploit-db.com/google-hacking-database  &&  https://www.stationx.net/google-dorks-cheat-sheet/  
+
+**Maltego**  
+provides tools for link analysis and data visualization of relationships between people, groups, websites, domains, networks, and other entities across public and private data sources.
+https://www.maltego.com  
+
+
+
 
 ***Tools***    
 
