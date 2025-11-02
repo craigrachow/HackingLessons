@@ -9,7 +9,8 @@ HTB Windows Fundermentals (Complete)
 | `cls` | Clear the terminal screen | `cls` |
 | `echo` | Display a message or variable value | `echo Hello HTB!` |
 | `help` | Show available commands | `help` |
-| `list commands` | Show available commands | `get-command` |
+| `get-command` | Show available commands | `get-command` |
+| `get-alias` | Show available shorter or alias commands | `get-alias` |
 | `exit` | Close Command Prompt or PowerShell | `exit` |
 | `dokey /history` | Lists previous command history | `dokey /history` |
 | `more` | Reads a file and scrunches the spacing | `more /s` |
