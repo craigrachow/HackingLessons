@@ -7,10 +7,10 @@ A personal record and notes of my journey through offensive security.
 
 | Topic | Lessons | Documentation | Status |
 |-------|---------|---------------|--------|    
-| Getting Started | * Initial walkthrough of HTB Academy & | Yes | ✔️ Complete |
+| Getting Started | * Initial walkthrough of HTB Academy <br> two | Yes | ✔️ Complete |
 | Linux Fundamentals | Linux basics for pentesting | Yes | ✔️ Complete |
 | Windows Fundamentals | Windows OS basics & commands | Yes | ✔️ Complete |
-| Networking | Host discovery & port scanning | Yes | ✔️ Complete |
+| Networking | Network Foundations (HTB Academy)  | Yes | ✔️ Complete |
 | SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
 
 Old Table
@@ -54,6 +54,14 @@ Lessons and Tutorials Covered
 * Web Enumeration
 * Windows Fundermentals (HTB Academy)
 
+| Resource                                                                           | Purpose                    |
+| ---------------------------------------------------------------------------------- | -------------------------- |
+| [https://academy.hackthebox.com](https://academy.hackthebox.com)                   | Official HTB Academy       |
+| [https://status.hackthebox.com](https://status.hackthebox.com)                     | HTB service status         |
+| [https://github.com/carlospolop/PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege escalation tools |
+| [https://gtfobins.github.io](https://gtfobins.github.io)                           | Exploits for binaries      |
+| [https://wiki.het.io/ctf](https://wiki.het.io/ctf)                                 | CTF methodology & notes    |
+| [https://exploit-db.com](https://exploit-db.com)                                   | Exploit database           |
 
 
 ##### Connect to VPN
