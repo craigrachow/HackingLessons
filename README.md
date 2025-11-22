@@ -10,7 +10,8 @@ A personal record and notes of my journey through offensive security.
 | Getting Started | * Initial walkthrough of HTB Academy <br> two | Yes | ✔️ Complete |
 | Linux Fundamentals | Linux basics for pentesting | Yes | ✔️ Complete |
 | Windows Fundamentals | Windows OS basics & commands | Yes | ✔️ Complete |
-| Networking | Network Foundations (HTB Academy)  | Yes | ✔️ Complete |
+| Networking | Introduction to Networking (HTB Academy)  | No | ✔️ Complete |
+| Networking | Network Foundations (HTB Academy)  | No | 🚧 In Progress |
 |            | Network Enumeration (HTB Academy)  | [NetworkEnub](https://github.com/craigrachow/HackingLessons/blob/main/NetworkEnub.md) | ✔️ Complete |
 | SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
 
