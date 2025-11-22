@@ -10,7 +10,7 @@ A personal record and notes of my journey through offensive security.
 | Getting Started | * Initial walkthrough of HTB Academy <br> two | Yes | ✔️ Complete |
 | Linux Fundamentals | Linux basics for pentesting | Yes | ✔️ Complete |
 | Windows Fundamentals | Windows OS basics & commands | Yes | ✔️ Complete |
-| Networking | Network Foundations (HTB Academy)  | Yes | ✔️ Complete |
+| Networking | Network Foundations (HTB Academy) <br>  | Yes | ✔️ Complete |
 | SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
 
 Old Table
