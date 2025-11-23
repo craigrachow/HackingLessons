@@ -1,12 +1,31 @@
 # Local File Inclusion (LFI) — Cheat Sheet
 
-A summary of **LFI exploitation techniques** used in web hacking and CTF platforms. Includes payload examples, bypass techniques, RCE via PHP wrappers, file upload tricks, fuzzing, wordlists and log poisoning.
+## Understanding Local File Inclusion (LFI)
+Web applications sometimes load pages dynamically using a parameter in the URL.  
+Example: http://www.example-site.com/index.php?page=about  
+
+The application may include the file about.php from the server — but if the parameter is not sanitized, an attacker could change the value and force the server to load other files, such as sensitive system files:  
+http://www.example-site.com/index.php?page=../../../../etc/passwd  
+
+This is the core of Local File Inclusion (LFI) — manipulating file paths to read or execute files on the server.
+
+## Types of LFI Attacks
+| Type | Description |
+|------|---------|
+| File DisclosureI | Attacker accesses files like /etc/passwd, configs, logs, backups, etc. |
+| Code Execution | If file upload is possible, the attacker may include their own PHP code for RCE.|
+| Log Poisoning	| Injecting PHP payloads into logs (e.g., via User-Agent) and including them to execute code.|
+| Wrapper-Based Attacks |	PHP wrappers like php://input or php://filter used to bypass filters or encode payloads.|
+| Chained Attacks |	LFI combined with other vulnerabilities (upload, SSRF, path traversal) to escalate impact.|
 
 
-## What is LFI?
-**Local File Inclusion (LFI)** is a vulnerability where an attacker can include files on a web server using a parameter such as:  /index.php?language=FILE
-
-If not properly sanitized, this allows reading sensitive files (e.g. `/etc/passwd`) or achieving **Remote Code Execution (RCE)**.
+## Detection Techniques
+- Try manual payload testing (../../../../../etc/passwd)  
+- Use scanners: Burp Suite, OWASP ZAP, Nikto, wfuzz  
+- Attempt log inclusion:  
+../../../../var/log/apache2/access.log  
+- Test for null byte injections (%00) — sometimes effective on legacy PHP versions  
+- Observe error messages for directory structure leaks  
 
 ---
 
@@ -81,12 +100,12 @@ Fuzz webroot path:
 Fuzz server configurations:   
 `ffuf -w ./LFI-WordList-Linux: FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=.././FUZZ' -fs 2287`  
 
-LFI Wordlists
-LFI-Jhaddix.txt
-Webroot path wordlist for Linux
-Webroot path wordlist for Windows
-Server configurations wordlist for Linux
-Server configurations wordlist for Windows
+**LFI Wordlists**  
+LFI-Jhaddix.txt  
+Webroot path wordlist for Linux  
+Webroot path wordlist for Windows  
+Server configurations wordlist for Linux  
+Server configurations wordlist for Windows  
 
 ## Misc
 **PHP**  
