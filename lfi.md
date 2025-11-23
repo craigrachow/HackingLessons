@@ -81,4 +81,48 @@ Fuzz webroot path:
 Fuzz server configurations:   
 `ffuf -w ./LFI-WordList-Linux: FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=.././FUZZ' -fs 2287`  
 
+LFI Wordlists
+LFI-Jhaddix.txt
+Webroot path wordlist for Linux
+Webroot path wordlist for Windows
+Server configurations wordlist for Linux
+Server configurations wordlist for Windows
+
+## Misc
+**PHP**  
+include()/include_once()  
+Read Content [Yes] - Execute [Yes] - Remote URL [Yes]  
+require()/require_once()  
+Read Content [Yes] - Execute [Yes] - Remote URL [No]  
+file_get_contents()  
+Read Content [Yes] - Execute [No] - Remote URL [Yes]  
+fopen()/file()  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+
+**NodeJS**  
+fs.readFile()  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+fs.sendFile()  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+res.render()  
+Read Content [Yes] - Execute [Yes] - Remote URL [No]  
+
+**Java**  
+include  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+import  
+Read Content [Yes] - Execute [Yes] - Remote URL [Yes]  
+
+**.NET**  
+@Html.Partial))  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+@Html.RemotePartial()  
+Read Content [Yes] - Execute [No] - Remote URL [Yes]  
+Response.WriteFile()  
+Read Content [Yes] - Execute [No] - Remote URL [No]  
+include  
+Read Content [Yes] - Execute [Yes] - Remote URL [Yes]  
+
+
+
 
