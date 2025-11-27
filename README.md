@@ -12,6 +12,7 @@ A personal record and notes of my journey through offensive security.
 | Getting Started | Introduction to Penetration Testing | Yes | 🚧 In Progress |
 | Getting Started | Pentest in a Nutshell | Yes | 🚧 In Progress |
 | Linux Fundamentals | Linux basics for pentesting | Yes | ✔️ Complete |
+| Bash Scripting | Introduction to Bash Scripting (HTB Academy) | [Bash](https://github.com/craigrachow/HackingLessons/blob/main/Bash.md) | ✔️ Complete |
 | Windows Fundamentals | Windows OS basics & commands | Yes | ✔️ Complete |
 | Networking | Introduction to Networking (HTB Academy)  | No | ✔️ Complete |
 | Networking | Network Foundations (HTB Academy)  | No | 🚧 In Progress |
