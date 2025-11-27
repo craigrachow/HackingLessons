@@ -76,21 +76,15 @@ Run:
 
 ---
 
-## 🔑 Variables
+## Variables
 
 | Type         | Example                       |
 | ------------ | ----------------------------- |
 | User defined | `NAME="craig"`                |
 | Built-in     | `$USER`, `$HOME`, `$HOSTNAME` |
 
-**Example 1 – System investigation:**
-
-```bash
-echo "User logged in: $USER"
-```
-
-**Example 2 – Save command output:**
-
+**Example 1 – System investigation:** `echo "User logged in: $USER"`
+**Example 2 – Save command output:** 
 ```bash
 IP=$(hostname -I)
 echo "My IP is: $IP"
@@ -98,8 +92,7 @@ echo "My IP is: $IP"
 
 ---
 
-## 📦 Arrays
-
+## Arrays
 ```bash
 PORTS=(21 22 80 443 3306)
 for p in "${PORTS[@]}"; do
@@ -112,7 +105,7 @@ done
 
 ---
 
-## 🔀 Conditional Execution (`if`, `&&`, `||`)
+## Conditional Execution (`if`, `&&`, `||`)
 
 ```bash
 if [ -f "/etc/passwd" ]; then
@@ -120,35 +113,20 @@ if [ -f "/etc/passwd" ]; then
 fi
 ```
 
-**CTF Example – Check for privilege escalation:**
-
-```bash
-[ $(id -u) -eq 0 ] && echo "ROOT access achieved!"
-```
+**CTF Example – Check for privilege escalation:** `[ $(id -u) -eq 0 ] && echo "ROOT access achieved!"`
 
 ---
 
-## ➕ Arithmetic
+## Arithmetic
 
-```bash
-TOTAL=$(($SUCCESS + $FAIL))
-```
+`TOTAL=$(($SUCCESS + $FAIL))`
 
-**Example 1 – Count login attempts:**
-
-```bash
-FAILED=$(grep -c "Failed password" auth.log)
-```
-
-**Example 2 – Calculate hash collisions:**
-
-```bash
-COUNT=$(wc -l hashes.txt)
-```
+**Example 1 – Count login attempts:** `FAILED=$(grep -c "Failed password" auth.log)`
+**Example 2 – Calculate hash collisions:** `COUNT=$(wc -l hashes.txt)`
 
 ---
 
-## 🔁 Loops
+## Loops
 
 ```bash
 for USER in $(cut -d: -f1 /etc/passwd); do
@@ -156,15 +134,11 @@ for USER in $(cut -d: -f1 /etc/passwd); do
 done
 ```
 
-**Example – Bruteforce SSH usernames:**
-
-```bash
-for U in $(cat users.txt); do echo "Testing $U"; done
-```
+**Example – Bruteforce SSH usernames:** `for U in $(cat users.txt); do echo "Testing $U"; done`
 
 ---
 
-## ⚖️ Comparison Operators
+## Comparison Operators
 
 | Operator | Meaning           |
 | -------- | ----------------- |
@@ -176,7 +150,6 @@ for U in $(cat users.txt); do echo "Testing $U"; done
 | `!=`     | String not equals |
 
 **Example – Check if service crashed:**
-
 ```bash
 ERROR_COUNT=5
 if [ "$ERROR_COUNT" -gt 0 ]; then echo "Alerts found!"; fi
@@ -184,7 +157,7 @@ if [ "$ERROR_COUNT" -gt 0 ]; then echo "Alerts found!"; fi
 
 ---
 
-## 🧩 Functions
+## Functions
 
 ```bash
 function scan_port() {
@@ -194,7 +167,6 @@ scan_port 10.10.10.5 22
 ```
 
 **Example – Automate basic nmap scan**
-
 ```bash
 scan_nmap(){
     nmap -sV $1
@@ -204,40 +176,74 @@ scan_nmap 10.10.10.5
 
 ---
 
-## 📁 Good Example Scripts
+## Good Example Scripts
 
-> *These are already written correctly and do not need edits.*
-
-You provided solid real-world scripts for **log analysis & error detection**. Great for:
-
-* cron jobs
-* monitoring servers
-* threat detection
-* forensic analysis
-
----
-
-### 🧠 Next Suggestions
-
-* Convert `analyse-logs.sh` into **CTF evidence parser**
-* Add **colour-coded (RED/YELLOW/GREEN)** log alerts
-* Export to **CSV** and analyse in `pandas`
-* Store results in `/opt/ctf-reports/`
-
----
-
-Let me know if you'd like:
-
-* 🚀 A **privilege escalation script** in bash
-* 🧠 Bash **flashcards** for revision
-* 📊 A script that **auto-detects vulnerable binaries** (SUID / Capabilities)
-
-Happy hacking 🐧💻⚔️
-
+Example – Search log files changed in the last day for any errors or fatal alerts. Count and print them.
+```bash
+#!/bin/bash analyse-logs.sh
+LOG_DIR=”/Users/name/logs”
+APP_LOG_FILE=”application.log”
+SYS_LOG_FILE=”system.log”
+echo -e “\analysing log files”
+echo “==============”
+echo -e “\List of log files updated in last 24 hours”
+Find $LOG_DIR -name “*.log” -mtime -1
+echo -e “\searching ERROR logs in application.log file”
+grep “ERROR”  “$LOG_DIR/$APP_LOG_FILE”
+grep -c “ERROR” “$LOG_DIR/$APP_LOG_FILE”
+grep -c “FATAL” “$LOG_DIR/$APP_LOG_FILE”
+echo -e “\analysing system.log”
+grep -c “FATAL” system.log
+grep -c “CRITICAL” system.log
+grep -c “CRITICAL” system.log`
 ```
-
----
-
-Let me know if you want a **PDF version**, **Git repo structure**, or **flashcard drill mode** for memorising bash commands.
+More efficient of the above script 
+```bash
+#!/bin/bash analyse-logs.sh
+LOG_DIR=”/Users/name/logs”
+APP_LOG_FILE=”application.log”
+SYS_LOG_FILE=”system.log”
+ERROR_PATTERNS=(“ERROR” “FATAL” “CRITICAL”)
+echo -e “\analysing log files”
+echo “==============”
+echo -e “\List of log files updated in last 24 hours”
+LOG_FILES=$(find $LOG_DIR -name “*.log” -mtime -1)
+echo “$LOG_FILES”
+echo -e “\searching ERROR logs in application.log file”
+grep  “${ERROR_PATTERNS[0]}”  “$LOG_DIR/$APP_LOG_FILE”
+grep -c “${ERROR_PATTERNS[0]}” “$LOG_DIR/$APP_LOG_FILE”
+grep -c “${ERROR_PATTERNS[1]}” “$LOG_DIR/$APP_LOG_FILE”
+echo -e “\analysing system.log”
+grep -c “${ERROR_PATTERNS[1]}” system.log
+grep -c “${ERROR_PATTERNS[2]}” system.log
+grep -c “${ERROR_PATTERNS[2]}” system.log`
 ```
+Best efficiency of the above script with formatting
+```bash
+#!/bin/bash analyse-logs.sh
+LOG_DIR=”/Users/name/logs”
+ERROR_PATTERNS=(“ERROR” “FATAL” “CRITICAL”)
+REPORT_FILE=”/Users/name/logs/log_analysis_report.txt”
+echo -e “\analysing log files” > “$REPORT_FILE”
+echo “==============” >> “$REPORT_FILE”
+echo -e “\List of log files updated in last 24 hours” >> “$REPORT_FILE”
+LOG_FILES=$(find $LOG_DIR -name “*.log” -mtime -1)
+echo “$LOG_FILES” >> “$REPORT_FILE” 
+for LOG_FILE in $LOG_FILES; do
+     echo -e “\n”
+     echo “=======================================” >> “$REPORT_FILE”
+     echo “=================$LOG_FILE======================” >> “$REPORT_FILE”
+     echo “=======================================” >> “$REPORT_FILE”
+          for PATTERN in ${$ERROR_PATTERNS[@]}; do
+          echo -e “\searching $PATTERN logs in $LOG_FILE file” >> “$REPORT_FILE”
+          grep  “$PATTERN”  “$LOG_FILE” >> “$REPORT_FILE”
+          echo -e “\number of $PATTERN logs found in $LOG_FILE” >> “$REPORT_FILE”
+           ERROR_COUNT=$(grep -c “$PATTERN” “$LOG_FILE”
+          echo $ERROR_COUNT >> “$REPORT_FILE”
+          if [ “$ERROR_COUNT” -gt 10];then
+              echo “WARNING ACTION REQUIRED: too many $PATTERN errors in log file $LOG_FILE”
+           fi 
+     done
+done
+echo – e “\Log analysis completed and report saved in : $RPORT_FILE
 
