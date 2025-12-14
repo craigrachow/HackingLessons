@@ -1,5 +1,5 @@
-# Login Attacks
-This page provides a concise overview of **login and brute-force attacks**, common tooling, wordlists, and real-world techniques used during **CTFs and penetration tests**.
+# Password Attacks
+This page provides a concise overview of **password login and brute-force attacks**, common tooling, wordlists, and real-world techniques used during **CTFs and penetration tests**.
 
 ## What Is Login Brute Forcing?
 Login brute forcing is an attack technique where an attacker systematically attempts multiple username and password combinations against a login mechanism until valid credentials are discovered.
