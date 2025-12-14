@@ -17,8 +17,10 @@ A personal record and notes of my journey through offensive security.
 | Networking | Introduction to Networking (HTB Academy)  | No | ✔️ Complete |
 | Networking | Network Foundations (HTB Academy)  | No | 🚧 In Progress |
 |            | Network Enumeration (HTB Academy)  | [NetworkEnub](https://github.com/craigrachow/HackingLessons/blob/main/NetworkEnub.md) | ✔️ Complete |
-| SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
+|     |      |    |     |
 | Local File Inclusion | File Inclusion (HTB Academy) | [LFI](https://github.com/craigrachow/HackingLessons/blob/main/lfi.md) | ✔️ Complete |
+| Password Attacks | Login Brute Forcing (HTB Academy) | [PasswordAttacks](https://github.com/craigrachow/HackingLessons/blob/main/PasswordAttacks.md). | ✔️ Complete |
+| SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
 
 Old Table
 | Learning Process | Methodology & thinking patterns | ✔️ Complete | **No** | 
