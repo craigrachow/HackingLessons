@@ -54,30 +54,35 @@ eyewitness --web -x web_discovery.xml -d inlanefreight_eyewitness
 ```
 ---
 
-## 📝 Content Management Systems (CMS)
+## Content Management Systems (CMS)
 
 ### Target Platforms
-
 * WordPress
 * Drupal
 * Joomla
 
 ### Enumeration Strategy
-
 * Identify CMS and version
 * Enumerate plugins, themes, and users
 * Check for outdated or vulnerable components
 
 ### Common Attacks
-
 * Exploiting vulnerable plugins/themes
 * Weak admin credentials
 * File upload vulnerabilities
 * Configuration file exposure
 
 ### Example Tools & Commands
+* Try to browse the following directories /wp-admin /wp-content /wp-content/plugins /wp-content/themes... look for readme.xt files within
+* Check out /robots.xml file
 
 ```bash
+curl -s http://blog.inlanefreight.local | grep WordPress
+curl -s http://blog.inlanefreight.local/ | grep themes
+curl -s http://blog.inlanefreight.local/ | grep plugins
+curl -s http://blog.inlanefreight.local/?p=1 | grep plugins
+wpscan --url http://blog.inlanefreight.local --enumerate
+wpscan --password-attack xmlrpc -t 20 -U duog -P /usr/share/wordlists/rockyou.txt --url http://blog.inlanefreight.local
 wpscan --url http://target --enumerate vp,vt,u
 ```
 
