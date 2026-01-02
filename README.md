@@ -21,6 +21,8 @@ A personal record and notes of my journey through offensive security.
 | Local File Inclusion | File Inclusion (HTB Academy) | [LFI](https://github.com/craigrachow/HackingLessons/blob/main/lfi.md) | ✔️ Complete |
 | Password Attacks | Login Brute Forcing (HTB Academy) | [PasswordAttacks](https://github.com/craigrachow/HackingLessons/blob/main/PasswordAttacks.md) | ✔️ Complete |
 | SQL Attacking – SQLmap Essentials | SQL injection fundamentals | Yes | ✔️ Complete |
+|     |      |    |     |
+| Attacking & Testing | Attacking Common Applications (HTB Academy) | [Attacking Common Applications](https://github.com/craigrachow/HackingLessons/blob/main/attackingcommonapplications.md) | 🚧 In Progress |
 
 Old Table
 | Learning Process | Methodology & thinking patterns | ✔️ Complete | **No** | 
