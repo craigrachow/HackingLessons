@@ -5,7 +5,7 @@ This document provides a **high-level methodology** for discovering, enumerating
 ---
 
 ## Notetaking Setup
-Being organized from the start and keeping detailed logs and notes will help us greatly with the final report. Set up the skeleton of the report at the beginning of the assessment so we can begin filling in certain sections of the report while waiting for a scans to finish. All of this will save time at the end of the engagement, leave us more time for the fun stuff (testing misconfigurations and exploits!), and ensure that we are as thorough as possible.
+Keeping detailed logs and notes will help us greatly with the final report. Set up the skeleton of the report at the beginning of the assessment so we can begin filling in certain sections of the report while waiting for a scans to finish.
 
 - External Penetration - < Test Client Name >  
   - Scope (including in-scope IP addresses/ranges, URLs, any fragile hosts, testing timeframes, and any limitations or other relative information we need handy)  
