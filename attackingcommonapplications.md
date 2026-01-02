@@ -38,12 +38,20 @@ Before attacking any application, it is critical to **identify what is running**
 ```bash
 whatweb http://target
 nmap -sV -p 80,443 target
+nmap -p 80,443,8000,8080,8180,8888,10000 --open -oA web_discovery -iL scope_list.txt
 ````
 
 ```bash
 gobuster dir -u http://target -w wordlist.txt
 ```
 
+### Webpage Screen Shots
+Done with eyewitness
+```bash
+sudo apt install eyewitness
+nmap -p 80,443,8000,8080,8180,8888,10000 --open -oA web_discovery -iL scope_list.txt
+eyewitness --web -x web_discovery.xml -d inlanefreight_eyewitness
+```
 ---
 
 ## 📝 Content Management Systems (CMS)
