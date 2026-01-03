@@ -84,9 +84,14 @@ curl -s http://blog.inlanefreight.local/?p=1 | grep plugins
 curl -s http://dev.inlanefreight.local/ | grep Joomla
 curl -s http://dev.inlanefreight.local/README.txt | head -n 5
 curl -s http://dev.inlanefreight.local/administrator/manifests/files/joomla.xml | xmllint --format -
+sudo python3 joomla-brute.py -u http://dev.inlanefreight.local -w /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt -usr admin
 wpscan --url http://blog.inlanefreight.local --enumerate
 wpscan --password-attack xmlrpc -t 20 -U duog -P /usr/share/wordlists/rockyou.txt --url http://blog.inlanefreight.local
 wpscan --url http://target --enumerate vp,vt,u
+curl -s http://drupal.inlanefreight.local | grep Drupal
+curl -s http://drupal-acc.inlanefreight.local/CHANGELOG.txt | grep -m2 ""
+visit http://drupal.inlanefreight.local/node/1
+droopescan scan drupal -u http://drupal.inlanefreight.local
 ```
 
 ```bash
@@ -94,6 +99,8 @@ sudo pip3 install droopescan
 droopescan scan joomla --url http://dev.inlanefreight.local/
 droopescan scan wordpress --url http://blog.inlanefreight.local/
 droopescan scan drupal -u http://target
+wget https://github.com/ajnik/joomla-bruteforce/blob/master/joomla-brute.py
+sudo python3 joomla-brute.py -u http://dev.inlanefreight.local -w /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt -usr admin
 ```
 An inactive theme can be selected to avoid corrupting the primary theme. We already know that the active theme is Transport Gravity. An alternate theme such as Twenty Nineteen can be chosen instead.
 
