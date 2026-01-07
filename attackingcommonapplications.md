@@ -233,6 +233,7 @@ curl http://target/script
 ## 📊 Infrastructure Monitoring Tools
 
 ### Splunk
+https://github.com/0xjpuff/reverse_shell_splunk
 
 **Enumeration**
 
