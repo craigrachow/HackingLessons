@@ -9,6 +9,11 @@ Repeat
 ZAP better then burp  
 
 
+## hosts file insert script ## 
+IP=10.129.42.195
+printf "%s\t%s\n\n" "$IP" "app.inlanefreight.local dev.inlanefreight.local blog.inlanefreight.local" | sudo tee -a /etc/hosts
+
+
 
 ## Web Enumeration ##
 wappalyzer - good plugin for looking at website platforms or software. add this to my hacking soe  
