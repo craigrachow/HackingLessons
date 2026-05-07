@@ -1,5 +1,5 @@
 
-# 🐍 Introduction to Python 3 — Cheat Sheet (CTF & Pentesting Focus)
+# Introduction to Python 3 - Cheat Sheet (CTF & Pentesting Focus)
 
 A quick reference guide covering core Python concepts with practical examples for scripting, automation, and hacking tasks.
 
