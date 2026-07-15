@@ -65,10 +65,11 @@ Lessons and Tutorials Covered
 * Web Enumeration
 * Windows Fundermentals (HTB Academy)
 
-| Resource                                                                           | Purpose                    |
+| Learning Resource                                                                           | Purpose                    |
 | ---------------------------------------------------------------------------------- | -------------------------- |
 | [https://academy.hackthebox.com](https://academy.hackthebox.com)                   | Official HTB Academy       |
 | [https://status.hackthebox.com](https://status.hackthebox.com)                     | HTB service status         |
+| [https://portswigger.net/web-security/learning-paths](https://portswigger.net/web-security/learning-paths)| Curated pathways provide a structured approach to learning web security         |
 | [https://github.com/carlospolop/PEASS-ng](https://github.com/carlospolop/PEASS-ng) | Privilege escalation tools |
 | [https://gtfobins.github.io](https://gtfobins.github.io)                           | Exploits for binaries      |
 | [https://wiki.het.io/ctf](https://wiki.het.io/ctf)                                 | CTF methodology & notes    |
