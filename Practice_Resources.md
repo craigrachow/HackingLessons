@@ -20,6 +20,7 @@ A curated list of excellent online platforms and self-hosted labs for learning p
 | [VulnHub](https://www.vulnhub.com/) | Downloadable intentionally vulnerable virtual machines for offline practice. | ❌ No |
 | [CyberDefenders](https://cyberdefenders.org/) | Blue team and digital forensics challenges using realistic datasets. | ✅ Yes |
 | [RangeForce Community Edition](https://www.rangeforce.com/community-edition) | Interactive blue team training modules. | ✅ Yes |
+| [Command Challenge](https://cmdchallenge.com) | Web page emulated terminal containing command line tasks and challenges. | ❌ No  |
 
 ---
 
@@ -39,5 +40,6 @@ A curated list of excellent online platforms and self-hosted labs for learning p
 | [BadBlood](https://github.com/davidprowe/BadBlood) | Automatically builds a populated Active Directory environment for lab practice. | ❌ No |
 | [GOAD](https://github.com/Orange-Cyberdefense/GOAD) | Game of Active Directory - vulnerable enterprise AD environment for red team training. | ❌ No |
 | [VulnLab Build Guides](https://vulnlab.com/) | Additional self-hosted lab ideas and vulnerable environments. | Some resources |
+| [Command Line Murders](https://github.com/veltman/clmystery) | GitHub repo of text files pertaining to an unsolved crime. Your mission, comb through the evidence and work out whodunnit | ❌ No |
 
 ---
