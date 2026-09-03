@@ -246,4 +246,9 @@ for LOG_FILE in $LOG_FILES; do
      done
 done
 echo – e “\Log analysis completed and report saved in : $RPORT_FILE
+```
 
+## Practice Resources
+| Resource | Description |
+|---|---|
+| [HackerRank Linux Shell](https://www.hackerrank.com/domains/shell) | A set of challenges is focused on shell scripting. Each problem requires you to write a script in the site’s text editor, then run it to test your code against the requirements. |
