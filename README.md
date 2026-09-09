@@ -14,6 +14,7 @@ A personal record and notes of my journey through offensive security.
 | Linux Fundamentals | Linux Fundamentals (HTB Academy) | [Linux Fundamentals](https://github.com/craigrachow/HackingLessons/blob/main/LinuxFundarmentals.md) | ✔️ Complete |
 | Bash Scripting | Introduction to Bash Scripting (HTB Academy) | [Bash](https://github.com/craigrachow/HackingLessons/blob/main/Bash.md) | ✔️ Complete |
 | Windows Fundamentals | Windows OS basics & commands | Yes | ✔️ Complete |
+| Windows CLI inc PowerShell | Introduction to Windows Command Line | [Windows CLI](https://github.com/craigrachow/HackingLessons/blob/main/Windows-CLI.md) | ✔️ Complete |
 | Networking | Introduction to Networking (HTB Academy)  | No | ✔️ Complete |
 | Networking | Network Foundations (HTB Academy)  | No | 🚧 In Progress |
 |            | Network Enumeration (HTB Academy)  | [NetworkEnub](https://github.com/craigrachow/HackingLessons/blob/main/NetworkEnub.md) | ✔️ Complete |
@@ -35,7 +36,6 @@ Old Table
 | OSINT | Open-source intelligence gathering | 🚧 In Progress | No |
 | Metasploit | Modules, auxiliary, and payloads | 🚧 In Progress | No | 
 | Web Enumeration | Directory scanning, fuzzing & recon | 🚧 In Progress | No |
-| Windows Fundamentals (Revisit) | Advanced usage — cmd & powershell | 🚧 In Progress | Yes (partial) |
 
 ---
 
