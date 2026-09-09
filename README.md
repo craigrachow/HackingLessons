@@ -52,7 +52,8 @@ Lessons and Tutorials Covered
 * Linux Fundermentals (HTB Academy)
 * Network Enumeration - Nmap (HTB Academy)
 * SQLAttacking - SQLmap Essentials - SQL Injection Fundermentals (HTB Academy)
-* Windows Fundermentals (HTB Academy)   
+* Windows Fundermentals (HTB Academy)
+* Introduction to Windows Command Line
 > No documetation *
 
 ### In Progress
@@ -63,7 +64,6 @@ Lessons and Tutorials Covered
 * Metasploit (HTB Academy)
 
 * Web Enumeration
-* Windows Fundermentals (HTB Academy)
 
 | Learning Resource                                                                           | Purpose                    |
 | ---------------------------------------------------------------------------------- | -------------------------- |
