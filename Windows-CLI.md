@@ -86,6 +86,9 @@ HTB Windows Fundermentals (Complete)
 | `net localgroup <group> <user> /add` | Add user to group | `net localgroup administrators bob /add` |
 | `Get-LocalGroupMember` | PowerShell equivalent | `Get-LocalGroupMember administrators` |
 | `New-LocalUser` | Create user | `New-LocalUser -Name bob -Password (ConvertTo-SecureString 'P@ss123!' -AsPlainText -Force)` |
+| `Get-ADUser -Identity` | Show a specific domain users properties | `Get-ADUser -Identity <name>` |
+| `Get-ADUser -Filter'}` | Filter domain users based on the a property. | `Get-ADUser -Filter {EmailAddress -like '*greenhorn.corp'}` |
+
 
 ---
 
@@ -148,6 +151,7 @@ HTB Windows Fundermentals (Complete)
 | `wevtutil qe Security /c:10 /f:text` | Query last 10 security events | `wevtutil qe Application /c:5 /f:text` |
 | `Get-EventLog` | PowerShell event log reader | `Get-EventLog -LogName System -Newest 10` |
 | `Get-WinEvent` | Newer event log cmdlet | `Get-WinEvent -LogName Security -MaxEvents 20` |
+| `Get-WinEvent -FilterHashTable` | Query for a specific log by eventID | `Get-WinEvent -LogName Security -MaxEvents 20` |
 
 ---
 
@@ -169,6 +173,7 @@ HTB Windows Fundermentals (Complete)
 | `Get-Help` | View command help | `Get-Help Get-Process -Detailed` |
 | `Import-Module` | Load module | `Import-Module ActiveDirectory` |
 | `Get-Module` | List modules | `Get-Module -ListAvailable` |
+| `Get-Content` | View the contents of a file. | `Get-Content <file>` |
 
 ---
 
