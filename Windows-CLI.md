@@ -222,12 +222,17 @@ Write-Host "1. Mario"
 Write-Host "2. CoD"
 $FavGame = Read-Host -Prompt "What is your fav game?"
 
+$PokemonCaught = "908"
+If ($PokemonCaught -eq 908) { Write-Host "You are a Pokemon Master" }
+ Else
+ { Write-Host "Go catch more Pokemon" }
 
 
 ```
 
 ## Good Resources 
-- https://ss64.com/nt/  
+- https://ss64.com/nt/
+- Learn PowerShell in Less Than 2 Hours - https://youtu.be/ZOoCaWyifmI?si=eItr7EphMeWs8Slz
 
 
 
