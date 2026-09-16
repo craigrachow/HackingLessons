@@ -204,6 +204,27 @@ Get-Service | ? {$_.Status -eq 'Running'}
 Get-ScheduledTask | Select TaskName, State
 Test-NetConnection -ComputerName 10.10.10.5 -Port 5985
 ```
+## Powershell Prac
+
+```powershell
+#Comment
+Write-Host "Hello World!"
+#Get Clues or Help
+Get-Command -CommandTyper Cmdlet
+Get-Help
+
+$SetAVariable
+#SetAArray = @('one','two','three')
+$array[0]
+
+Write-Host "What is your fav game?"
+Write-Host "1. Mario"
+Write-Host "2. CoD"
+$FavGame = Read-Host -Prompt "What is your fav game?"
+
+
+
+```
 
 ## Good Resources 
 - https://ss64.com/nt/  
