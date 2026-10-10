@@ -35,3 +35,5 @@ Writeable service path
 # Good Tutorial Videos:
 OSCP - Linux Privilege Escalation Methodology - https://youtu.be/VpNaPAh93vE
 OSCP - Windows Privilege Escalation Methodology - https://youtu.be/Qfy-traJwIs
+https://fuzzysecurity.com/tutorials/16.html
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/  
