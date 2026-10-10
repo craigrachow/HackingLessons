@@ -196,3 +196,6 @@ stty rows <num> columns <cols>
 Having a fully interactive shell can help immensely while enumerating a given host, performing post exploitation techniques and attempting to escalate privileges, and as most Linux systems come with Python or other scripting languages already installed, obtaining one should be fairly effortless.
 
 https://notes.anggipradana.com/tutorial/reverse-shell-cheatsheet
+https://highon.coffee/blog/reverse-shell-cheat-sheet/
+
+
