@@ -16,7 +16,8 @@ A personal record and notes of my journey through offensive security.
 | Windows Fundamentals | Windows OS basics & commands | No| ✔️ Complete |
 | Windows CLI inc PowerShell | Introduction to Windows Command Line | [Windows CLI](https://github.com/craigrachow/HackingLessons/blob/main/Windows-CLI.md) | ✔️ Complete |
 | Networking | Introduction to Networking (HTB Academy)  | No | ✔️ Complete |
-|            | Network Enumeration (HTB Academy)  | [Networks](https://github.com/craigrachow/HackingLessons/blob/main/Networks.md) | ✔️ Complete |
+|            | Network Foundations (HTB Academy)  | [Networks](https://github.com/craigrachow/HackingLessons/blob/main/Networks.md) | ✔️ Complete |
+|            | Network Enumeration (HTB Academy)  | [Networks](https://github.com/craigrachow/HackingLessons/blob/main/Networks.md) | 🚧 Need to Document |
 |     |      |    |     |
 | Local File Inclusion | File Inclusion (HTB Academy) | [LFI](https://github.com/craigrachow/HackingLessons/blob/main/lfi.md) | ✔️ Complete |
 | Password Attacks | Login Brute Forcing (HTB Academy) | [PasswordAttacks](https://github.com/craigrachow/HackingLessons/blob/main/PasswordAttacks.md) | ✔️ Complete |
