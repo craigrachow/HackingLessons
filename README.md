@@ -51,6 +51,7 @@ Lessons and Tutorials Covered
 * Getting Started (HTB Academy)
 * Linux Fundermentals (HTB Academy)
 * Network Enumeration - Nmap (HTB Academy)
+* Network Enumeration (HTB Academy)
 * SQLAttacking - SQLmap Essentials - SQL Injection Fundermentals (HTB Academy)
 * Windows Fundermentals (HTB Academy)
 * Introduction to Windows Command Line
