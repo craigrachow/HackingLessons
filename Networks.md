@@ -1,5 +1,6 @@
 # Networking Enumeration
 A summary of core networking concepts used in cybersecurity, pentesting, and enumeration cheatsheet. 
+HTB Network Foundations (Complete)
 
 ### OSI Model (7 Layers)
 The **Open Systems Interconnection (OSI)** model is a conceptual framework used to understand how data travels across networks. It divides networking into **7 layers**, each with a specific role.
@@ -43,8 +44,9 @@ A simplified model used in real-world networking (used by the Internet).
 | IPS – Intrusion Prevention System | Blocks malicious traffic automatically | Suricata, Cisco NGFW |
 ---
 
-## Common Ports
-
+## Protocols and Ports
+Protocols are essential for defining how data is exchanged across networks. Each protocol operates at a specific layer of the OSI model, ensuring structured and efficient data handling.  
+Port numbers range from 0 to 65535. Well-Known Ports (0-1023), Registered Ports (1024-49151), Dynamic/Private Ports (49152-65535).  
 | Port | Protocol | Purpose / Usage |
 |------|---------|---------------------------|
 | 20/21 | FTP | File transfer |
@@ -65,6 +67,8 @@ A simplified model used in real-world networking (used by the Internet).
 | 8000–9000 | Common dev/web ports |
 | 27017 | MongoDB | Developer DB used a lot in labs |
 
+##
+**IPv4 private address ranges** include 10.0.0.0 to 10.255.255.255, 172.16.0.0 to 172.31.255.255, and 192.168.0.0 to 192.168.255.255.
 ---
 
 ## Common Networking Tools (with Examples)
@@ -113,4 +117,6 @@ Other programs
 > - **masscan 192.168.0.1/24 -p0-65535 --rate=10000** - scans network for all hosts, but fast
 > - **masscan 192.168.0.1/24 -p23 --rate=1000** - does a quick scan for all telnet open
 > - other options --randomize-hosts (dont scan in order)
+
+### Good Resources
 
