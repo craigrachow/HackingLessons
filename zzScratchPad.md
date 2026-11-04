@@ -8,6 +8,11 @@ Evlate
 Repeat  
 ZAP better then burp  
 
+## To Learn and Test ##
+rustscan - Modern Port Scanner   https://www.kali.org/tools/rustscan/
+katana - Next-generation crawling and spidering framework        https://www.kali.org/tools/katana/  
+
+
 
 ## hosts file insert script ## 
 IP=10.129.42.195
